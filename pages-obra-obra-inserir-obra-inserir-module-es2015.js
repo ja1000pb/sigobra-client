@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content padding class=\"login auth-page\">\r\n  <ion-toolbar color=\"#04ff0c\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button color=\"secondary\"></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>\r\n      <ion-text color=\"light\">\r\n        <ion-text color=\"light\" class=\"fw700\">Obras\r\n        </ion-text>\r\n      </ion-text>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n  <div class=\"auth-content\">\r\n    <div padding-horizontal text-center>\r\n      <div class=\"logo\"></div>\r\n      <h3 no-margin>\r\n        <ion-text color=\"light\" class=\"fw700\">\r\n          <ion-text color=\"light\">Inserindo</ion-text>\r\n        </ion-text>\r\n      </h3>\r\n    </div>\r\n    <form class=\"list-form auth-conten\" (keydown)=\"keyDownFunction($event)\">\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Nome\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.nome\" name=\"nome\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Logradouro\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.logradouro\" name=\"logradouro\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Numero\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.numero\" name=\"numero\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Complemento\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.complemento\" name=\"complemento\" color=\"secondary\" \r\n                   type=\"text\">\r\n        </ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Bairro\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.bairro\" name=\"bairro\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Cidade\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.cidade\" name=\"cidade\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;CEP\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.cep\" name=\"cep\" color=\"secondary\" type=\"text\" \r\n                   [brmasker]=\"{mask:'00.000-000', len:10, userCaracters: true}\">\r\n        </ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;UF\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.uf\" name=\"uf\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>    \r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Estado\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.estado\" name=\"estado\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n            &nbsp; Data do Início da obra\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.dtinicio\" name=\"dtinicio\" color=\"secondary\" type=\"text\"\r\n                   placeholder=\"00/00/0000\" [brmasker]=\"{mask: '00/00/0000', type:'num', len:10}\">\r\n        </ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n           &nbsp; Fechamento da Obra\r\n        </ion-label>\r\n        <ion-toggle style=\"top: 8px;\" [(ngModel)]=\"obra.fechamentoobra\" color=\"tertiary\" \r\n                    name=\"fechamentoobra\" [checked]=\"obra.fechamentoobra\" check>\r\n        </ion-toggle>\r\n        <ion-input [(ngModel)]=\"obra.dtfinalizada\" name=\"dtfinalizada\" color=\"secondary\" type=\"text\" disabled=true\r\n                   placeholder=\"00/00/0000\" [brmasker]=\"{mask: '00/00/0000', type:'num', len:10}\">\r\n      </ion-input>\r\n      </ion-item>\r\n      \r\n    </form>\r\n    <div margin-top>\r\n      <ion-button size=\"medium\" expand=\"full\" shape=\"round\" color=\"secondary\" icon-right tappable (click)=\"salvar()\">\r\n        Salvar\r\n        <ion-icon name=\"checkmark-circle\"></ion-icon>\r\n      </ion-button>\r\n    </div>\r\n  </div>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content padding class=\"login auth-page\">\r\n  <ion-toolbar color=\"#04ff0c\" color=\"primary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button color=\"light\"></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>\r\n      <ion-text color=\"light\">\r\n        <ion-text color=\"light\" class=\"fw700\">Obras\r\n        </ion-text>\r\n      </ion-text>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n  <ion-toolbar color=\"#04ff0c\" color=\"primary\">\r\n    <div padding-horizontal text-center>\r\n      <div class=\"logo\"></div>\r\n      <h3 no-margin>\r\n        <ion-text color=\"light\" class=\"fw700\">\r\n          <ion-text color=\"light\"> &nbsp;Inserindo</ion-text>\r\n        </ion-text>\r\n      </h3>\r\n    </div>\r\n  </ion-toolbar>\r\n  <div class=\"auth-content\">\r\n    <form class=\"list-form auth-conten\" >\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Nome\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.nome\" name=\"nome\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;CEP\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.cep\" name=\"cep\" type=\"text\" (ionBlur)= \"consultaCEP($event.target.value)\"\r\n                   [brmasker]=\"{mask:'00.000-000', len:10, userCaracters: true}\">\r\n        </ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Numero\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.numero\" name=\"numero\"  type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Complemento\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.complemento\" name=\"complemento\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Logradouro\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.logradouro\" name=\"logradouro\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Bairro\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.bairro\" name=\"bairro\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Cidade\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.cidade\" name=\"cidade\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;UF\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.uf\" name=\"uf\" type=\"text\"></ion-input>\r\n      </ion-item>    \r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Estado\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.estado\" name=\"estado\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n            &nbsp; Data do Início da obra\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"obra.dtinicio\" name=\"dtinicio\" type=\"text\"\r\n                   placeholder=\"00/00/0000\" [brmasker]=\"{mask: '00/00/0000', type:'num', len:10}\">\r\n        </ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n           &nbsp; Fechamento da Obra\r\n        </ion-label>\r\n        <ion-toggle style=\"top: 8px;\" [(ngModel)]=\"obra.fechamentoobra\" color=\"tertiary\" \r\n                    name=\"fechamentoobra\" [checked]=\"obra.fechamentoobra\" check=\"false\">\r\n        </ion-toggle>\r\n        <ion-input [disabled]=\"!obra.fechamentoobra\" [(ngModel)]=\"obra.dtfinalizada\" name=\"dtfinalizada\" type=\"text\" \r\n                   placeholder=\"00/00/0000\" [brmasker]=\"{mask: '00/00/0000', type:'num', len:10}\">\r\n        </ion-input>\r\n      </ion-item>\r\n      \r\n    </form>\r\n    <div margin-top>\r\n      <ion-button size=\"medium\" expand=\"full\" shape=\"round\" color=\"primary\" \r\n      icon-right tappable (click)=\"salvar()\" *ngIf=\"close()\">\r\n        Salvar\r\n        <ion-icon name=\"checkmark-circle\" color=\"success\"></ion-icon>\r\n      </ion-button>\r\n    </div>\r\n  </div>\r\n</ion-content>");
 
 /***/ }),
 
@@ -107,7 +107,7 @@ ObraInserirPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".welcome-card ion-img {\n  max-height: 35vh;\n  overflow: hidden;\n}\n\n:host ion-content {\n  --background: linear-gradient(\n    135deg,\n    var(--ion-color-primary),\n    #ffffff\n  );\n}\n\n:host ion-item {\n  border-radius: 0;\n  border-bottom: 1px dotted var(--ion-color-medium);\n}\n\n:host ion-card.no-radius {\n  border-radius: 0;\n}\n\n.botao-cor {\n  color: black;\n}\n\n.olho {\n  cursor: pointer;\n  left: 94%;\n}\n\n.div-time {\n  top: 30px;\n  position: relative;\n}\n\n.my-avatar {\n  left: 37%;\n  position: relative;\n}\n\n.zoon-eliminado {\n  zoom: 0.6;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvb2JyYS9vYnJhLWluc2VyaXIvQzpcXFVzZXJzXFxyb2JlclxcT25lRHJpdmVcXGlvbmljXFxzaWdvYnJhLXVpL3NyY1xcYXBwXFxwYWdlc1xcb2JyYVxcb2JyYS1pbnNlcmlyXFxvYnJhLWluc2VyaXIucGFnZS5zY3NzIiwic3JjL2FwcC9wYWdlcy9vYnJhL29icmEtaW5zZXJpci9vYnJhLWluc2VyaXIucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQUE7RUFDQSxnQkFBQTtBQ0NKOztBREdJO0VBQ0U7Ozs7R0FBQTtBQ0lOOztBREdJO0VBQ0UsZ0JBQUE7RUFDQSxpREFBQTtBQ0ROOztBREtNO0VBQ0UsZ0JBQUE7QUNIUjs7QURRRTtFQUNFLFlBQUE7QUNMSjs7QURRRTtFQUNFLGVBQUE7RUFDQSxTQUFBO0FDTEo7O0FEU0U7RUFDRSxTQUFBO0VBQ0Esa0JBQUE7QUNOSjs7QURTRTtFQUNFLFNBQUE7RUFDQSxrQkFBQTtBQ05KOztBRFNFO0VBQ0UsU0FBQTtBQ05KIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvb2JyYS9vYnJhLWluc2VyaXIvb2JyYS1pbnNlcmlyLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi53ZWxjb21lLWNhcmQgaW9uLWltZyB7XHJcbiAgICBtYXgtaGVpZ2h0OiAzNXZoO1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICB9XHJcbiAgXHJcbiAgOmhvc3Qge1xyXG4gICAgaW9uLWNvbnRlbnQge1xyXG4gICAgICAtLWJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudChcclxuICAgICAgICAxMzVkZWcsXHJcbiAgICAgICAgdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpLFxyXG4gICAgICAgICNmZmZmZmZcclxuICAgICAgKTtcclxuICAgIH1cclxuICBcclxuICAgIGlvbi1pdGVtIHtcclxuICAgICAgYm9yZGVyLXJhZGl1czogMDtcclxuICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IGRvdHRlZCB2YXIoLS1pb24tY29sb3ItbWVkaXVtKTtcclxuICAgIH1cclxuICBcclxuICAgIGlvbi1jYXJkIHtcclxuICAgICAgJi5uby1yYWRpdXMge1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDA7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbiAgXHJcbiAgLmJvdGFvLWNvciB7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgfVxyXG4gIFxyXG4gIC5vbGhvIHtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIGxlZnQ6IDk0JTtcclxuICAgIFxyXG4gIH1cclxuXHJcbiAgLmRpdi10aW1lIHtcclxuICAgIHRvcDogMzBweDtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICB9XHJcblxyXG4gIC5teS1hdmF0YXIge1xyXG4gICAgbGVmdDogMzclO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIH1cclxuXHJcbiAgLnpvb24tZWxpbWluYWRvIHtcclxuICAgIHpvb206IDAuNjtcclxuICB9IiwiLndlbGNvbWUtY2FyZCBpb24taW1nIHtcbiAgbWF4LWhlaWdodDogMzV2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cblxuOmhvc3QgaW9uLWNvbnRlbnQge1xuICAtLWJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudChcbiAgICAxMzVkZWcsXG4gICAgdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpLFxuICAgICNmZmZmZmZcbiAgKTtcbn1cbjpob3N0IGlvbi1pdGVtIHtcbiAgYm9yZGVyLXJhZGl1czogMDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IGRvdHRlZCB2YXIoLS1pb24tY29sb3ItbWVkaXVtKTtcbn1cbjpob3N0IGlvbi1jYXJkLm5vLXJhZGl1cyB7XG4gIGJvcmRlci1yYWRpdXM6IDA7XG59XG5cbi5ib3Rhby1jb3Ige1xuICBjb2xvcjogYmxhY2s7XG59XG5cbi5vbGhvIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBsZWZ0OiA5NCU7XG59XG5cbi5kaXYtdGltZSB7XG4gIHRvcDogMzBweDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuXG4ubXktYXZhdGFyIHtcbiAgbGVmdDogMzclO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG5cbi56b29uLWVsaW1pbmFkbyB7XG4gIHpvb206IDAuNjtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".welcome-card ion-img {\n  max-height: 35vh;\n  overflow: hidden;\n}\n\n:host ion-content {\n  --background: var(--ion-color-success-shade);\n}\n\n:host ion-item {\n  border-radius: 0;\n  border-bottom: 1px dotted var(--ion-color-medium);\n}\n\n:host ion-card.no-radius {\n  border-radius: 0;\n}\n\n.botao-cor {\n  color: black;\n}\n\n.olho {\n  cursor: pointer;\n  left: 94%;\n}\n\n.div-time {\n  top: 30px;\n  position: relative;\n}\n\n.my-avatar {\n  left: 37%;\n  position: relative;\n}\n\n.zoon-eliminado {\n  zoom: 0.6;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvb2JyYS9vYnJhLWluc2VyaXIvQzpcXFVzZXJzXFxyb2JlclxcT25lRHJpdmVcXGlvbmljXFxzaWdvYnJhLXVpL3NyY1xcYXBwXFxwYWdlc1xcb2JyYVxcb2JyYS1pbnNlcmlyXFxvYnJhLWluc2VyaXIucGFnZS5zY3NzIiwic3JjL2FwcC9wYWdlcy9vYnJhL29icmEtaW5zZXJpci9vYnJhLWluc2VyaXIucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQUE7RUFDQSxnQkFBQTtBQ0NKOztBREdJO0VBQ0UsNENBQUE7QUNBTjs7QURHSTtFQUNFLGdCQUFBO0VBQ0EsaURBQUE7QUNETjs7QURLTTtFQUNFLGdCQUFBO0FDSFI7O0FEUUU7RUFDRSxZQUFBO0FDTEo7O0FEUUU7RUFDRSxlQUFBO0VBQ0EsU0FBQTtBQ0xKOztBRFNFO0VBQ0UsU0FBQTtFQUNBLGtCQUFBO0FDTko7O0FEU0U7RUFDRSxTQUFBO0VBQ0Esa0JBQUE7QUNOSjs7QURTRTtFQUNFLFNBQUE7QUNOSiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL29icmEvb2JyYS1pbnNlcmlyL29icmEtaW5zZXJpci5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIud2VsY29tZS1jYXJkIGlvbi1pbWcge1xyXG4gICAgbWF4LWhlaWdodDogMzV2aDtcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgfVxyXG4gIFxyXG4gIDpob3N0IHtcclxuICAgIGlvbi1jb250ZW50IHtcclxuICAgICAgLS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3Itc3VjY2Vzcy1zaGFkZSk7XHJcbiAgICB9XHJcbiAgXHJcbiAgICBpb24taXRlbSB7XHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDA7XHJcbiAgICAgIGJvcmRlci1ib3R0b206IDFweCBkb3R0ZWQgdmFyKC0taW9uLWNvbG9yLW1lZGl1bSk7XHJcbiAgICB9XHJcbiAgXHJcbiAgICBpb24tY2FyZCB7XHJcbiAgICAgICYubm8tcmFkaXVzIHtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAwO1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG4gIFxyXG4gIC5ib3Rhby1jb3Ige1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG4gIH1cclxuICBcclxuICAub2xobyB7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBsZWZ0OiA5NCU7XHJcbiAgICBcclxuICB9XHJcblxyXG4gIC5kaXYtdGltZSB7XHJcbiAgICB0b3A6IDMwcHg7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgfVxyXG5cclxuICAubXktYXZhdGFyIHtcclxuICAgIGxlZnQ6IDM3JTtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICB9XHJcblxyXG4gIC56b29uLWVsaW1pbmFkbyB7XHJcbiAgICB6b29tOiAwLjY7XHJcbiAgfSIsIi53ZWxjb21lLWNhcmQgaW9uLWltZyB7XG4gIG1heC1oZWlnaHQ6IDM1dmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG59XG5cbjpob3N0IGlvbi1jb250ZW50IHtcbiAgLS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3Itc3VjY2Vzcy1zaGFkZSk7XG59XG46aG9zdCBpb24taXRlbSB7XG4gIGJvcmRlci1yYWRpdXM6IDA7XG4gIGJvcmRlci1ib3R0b206IDFweCBkb3R0ZWQgdmFyKC0taW9uLWNvbG9yLW1lZGl1bSk7XG59XG46aG9zdCBpb24tY2FyZC5uby1yYWRpdXMge1xuICBib3JkZXItcmFkaXVzOiAwO1xufVxuXG4uYm90YW8tY29yIHtcbiAgY29sb3I6IGJsYWNrO1xufVxuXG4ub2xobyB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgbGVmdDogOTQlO1xufVxuXG4uZGl2LXRpbWUge1xuICB0b3A6IDMwcHg7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cblxuLm15LWF2YXRhciB7XG4gIGxlZnQ6IDM3JTtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuXG4uem9vbi1lbGltaW5hZG8ge1xuICB6b29tOiAwLjY7XG59Il19 */");
 
 /***/ }),
 
@@ -128,6 +128,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _model_objetc_obras__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../../model/objetc/obras */ "./src/app/model/objetc/obras.ts");
 /* harmony import */ var _service_sigobra_obra_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../../service/sigobra/obra.service */ "./src/app/service/sigobra/obra.service.ts");
 /* harmony import */ var _model_base__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../model/base */ "./src/app/model/base.ts");
+/* harmony import */ var _service_viacep_viacep_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../../../service/viacep/viacep.service */ "./src/app/service/viacep/viacep.service.ts");
+/* harmony import */ var _model_enums_estado_enum__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../model/enums/estado.enum */ "./src/app/model/enums/estado.enum.ts");
+
+
 
 
 
@@ -136,10 +140,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ObraInserirPage = class ObraInserirPage {
-    constructor(base, os, router, as) {
+    constructor(base, os, router, vcs, as) {
         this.base = base;
         this.os = os;
         this.router = router;
+        this.vcs = vcs;
         this.as = as;
         this.obra = new _model_objetc_obras__WEBPACK_IMPORTED_MODULE_4__["Obras"]();
     }
@@ -147,6 +152,7 @@ let ObraInserirPage = class ObraInserirPage {
         if ((this.os.obra !== undefined) && (this.os.obra !== null)) {
             this.obra = this.os.obra;
         }
+        this.fechamento();
     }
     get editando() {
         return Boolean(this.obra.id);
@@ -157,6 +163,7 @@ let ObraInserirPage = class ObraInserirPage {
     salvando() {
         if ((this.obra.ativo === undefined) || (this.obra.ativo === null)) {
             this.obra.ativo = true;
+            this.obra.fechamentoobra = false;
         }
         this.obra.empresa = this.as.token.empresa;
         this.base.present();
@@ -169,11 +176,61 @@ let ObraInserirPage = class ObraInserirPage {
             this.base.mensagemErro('Falha ao salvar obra :' + this.base.tratarErro(error));
         });
     }
+    fechamento() {
+        this.fecha = false;
+        if (this.obra.fechamentoobra === true) {
+            this.fecha = true;
+        }
+        else {
+            this.fecha = false;
+        }
+    }
+    close() {
+        try {
+            return (this.fecha === false);
+        }
+        catch (error) {
+            return true;
+        }
+    }
+    consultaCEP(cep) {
+        if (cep !== null && cep !== undefined && cep !== '') {
+            cep = cep.replace(/\D/g, '');
+            if (cep.length > 7) {
+                this.base.present();
+                this.vcs.consultaCEP(cep).subscribe(data => {
+                    this.base.dismiss();
+                    this.popula(data);
+                }, error => {
+                    this.base.dismiss();
+                    this.base.mensagemErro('Falha ao buscar CEP :' + this.base.tratarErro(error));
+                });
+            }
+        }
+    }
+    popula(data) {
+        if (data.erro !== undefined && data.erro !== null && data.erro) {
+            this.base.mensagemErro('Falha ao consultar endereço do CEP');
+            return;
+        }
+        this.obra.logradouro = data.logradouro;
+        this.obra.complemento = data.complemento;
+        this.obra.bairro = data.bairro;
+        this.obra.cidade = data.localidade;
+        this.obra.uf = data.uf;
+        for (var uf in _model_enums_estado_enum__WEBPACK_IMPORTED_MODULE_8__["Estado"]) {
+            if (data.uf === uf) {
+                this.obra.estado = _model_enums_estado_enum__WEBPACK_IMPORTED_MODULE_8__["Estado"][uf];
+                break;
+            }
+        }
+    }
 };
 ObraInserirPage.ctorParameters = () => [
     { type: _model_base__WEBPACK_IMPORTED_MODULE_6__["Base"] },
     { type: _service_sigobra_obra_service__WEBPACK_IMPORTED_MODULE_5__["ObraService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _service_viacep_viacep_service__WEBPACK_IMPORTED_MODULE_7__["ViacepService"] },
     { type: _service_autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_1__["AutentificacaoService"] }
 ];
 ObraInserirPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -182,9 +239,94 @@ ObraInserirPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./obra-inserir.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/obra/obra-inserir/obra-inserir.page.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./obra-inserir.page.scss */ "./src/app/pages/obra/obra-inserir/obra-inserir.page.scss")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_model_base__WEBPACK_IMPORTED_MODULE_6__["Base"], _service_sigobra_obra_service__WEBPACK_IMPORTED_MODULE_5__["ObraService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_model_base__WEBPACK_IMPORTED_MODULE_6__["Base"], _service_sigobra_obra_service__WEBPACK_IMPORTED_MODULE_5__["ObraService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _service_viacep_viacep_service__WEBPACK_IMPORTED_MODULE_7__["ViacepService"],
         _service_autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_1__["AutentificacaoService"]])
 ], ObraInserirPage);
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/sigobra/obra.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/service/sigobra/obra.service.ts ***!
+  \*************************************************/
+/*! exports provided: ObraService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ObraService", function() { return ObraService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../autentificacao/autentificacao.service */ "./src/app/service/autentificacao/autentificacao.service.ts");
+
+
+
+
+let ObraService = class ObraService {
+    constructor(http, as) {
+        this.http = http;
+        this.as = as;
+        this.url = '/obras';
+    }
+    salvar(obras) {
+        return this.http.post(this.as.url + this.url, obras, this.as.getOptions());
+    }
+    editar(obras) {
+        return this.http.put(this.as.url + this.url, obras, this.as.getOptions());
+    }
+    delete(obras) {
+        return this.http.post(this.as.url + this.url + '/deletar', obras, this.as.getOptions());
+    }
+    pesquisar(value) {
+        return this.http.post(this.as.url + this.url + '/pesquisar', value, this.as.getOptions());
+    }
+    pesquisa(value) {
+        return this.http.post(this.as.url + this.url + '/pesquisa', value, this.as.getOptions());
+    }
+    get(id) {
+        return this.http.post(this.as.url + this.url, id, this.as.getOptions());
+    }
+    edit(obras) {
+        return this.http.post(this.as.url + this.url + '/editar', obras, this.as.getOptions());
+    }
+    editarativo(obras) {
+        return this.http.post(this.as.url + this.url + '/editarativo', obras, this.as.getOptions());
+    }
+    pesquisar1(value) {
+        return this.http.post(this.as.url + this.url + '/pesquisar1', value, this.as.getOptions());
+    }
+    findTop10ComInspencoesAbertas() {
+        return this.http.get(this.as.url + this.url + '/ultimasobrasabertas', this.as.getOptions());
+    }
+    filtra(filtro) {
+        return this.http.post(this.as.url + this.url + '/filtrar', filtro, this.as.getOptions());
+    }
+    // relatorio por filtro
+    getRelatorioFiltro(filtro) {
+        return this.http.post(this.as.url + this.url + '/relatoriofiltro', filtro, this.as.getOptionsPDF());
+    }
+    // relatorio por obras
+    getRelatorioObras(obras) {
+        return this.http.post(this.as.url + this.url + '/relatorioobras', obras, this.as.getOptionsPDF());
+    }
+    // relatorio por obra
+    getRelatorioObra(obra) {
+        return this.http.post(this.as.url + this.url + '/relatorioobra', obra, this.as.getOptionsPDF());
+    }
+};
+ObraService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+    { type: _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"] }
+];
+ObraService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"]])
+], ObraService);
 
 
 

@@ -21,41 +21,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-content padding class=\"login auth-page\">\r\n  <ion-toolbar color=\"#04ff0c\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button color=\"secondary\"></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>\r\n      <ion-text color=\"light\">\r\n        <ion-text color=\"light\" class=\"fw700\">Usuario\r\n        </ion-text>\r\n      </ion-text>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n  <div class=\"auth-content\">\r\n    <div padding-horizontal text-center>\r\n      <div class=\"logo\"></div>\r\n      <h3 no-margin>\r\n        <ion-text color=\"light\" class=\"fw700\">\r\n          <ion-text color=\"light\">Inserindo</ion-text>\r\n        </ion-text>\r\n      </h3>\r\n    </div>\r\n    <form class=\"list-form auth-conten\" (keydown)=\"keyDownFunction($event)\">\r\n      <ion-item no-padding class=\"animated fadeInUp\" color=\"success\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp; Empresa\r\n        </ion-label>\r\n        <ionic-selectable  [(ngModel)]=\"pessoa.empresa\" color=\"secondary\" item-content name=\"empresas\" [(items)]=\"empresas\"\r\n          closeButtonText=\"Cancelar\" itemTextField=\"nome\" itemValueField=\"id\" canSearch=\"true\"\r\n          [isConfirmButtonEnabled]=\"true\" (onSelect)=\"selecionarEmpresa($event)\">\r\n        </ionic-selectable>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Nome\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"pessoa.nome\" name=\"nome\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;CPF\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"pessoa.cpf\" name=\"cpf\" color=\"secondary\" type=\"text\"\r\n        placeholder=\" \" [brmasker]=\"{person: true}\"\r\n        ></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;RG\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"pessoa.rg\" name=\"rg\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Telefone\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"pessoa.telefone1\" name=\"telefone1\" color=\"secondary\" type=\"text\" \r\n                   [brmasker]=\"{phone: true}\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Telefone 2\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"pessoa.telefone2\" name=\"telefone2\" color=\"secondary\" type=\"text\" \r\n                   [brmasker]=\"{phone: true}\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Logradouro\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"pessoa.logradouro\" name=\"logradouro\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Numero\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"pessoa.numero\" name=\"numero\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Complemento\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"pessoa.complemento\" name=\"complemento\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Bairro\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"pessoa.bairro\" name=\"bairro\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Cidade\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"pessoa.cidade\" name=\"cidade\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;CEP\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"pessoa.cep\" name=\"cep\" color=\"secondary\" type=\"text\" \r\n                   [brmasker]=\"{mask:'00.000-000', len:10, userCaracters: true}\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;UF\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"pessoa.uf\" name=\"uf\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>    \r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Estado\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"pessoa.estado\" name=\"estado\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item> \r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Login\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.login\" name=\"login\" color=\"secondary\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;E-Mail\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.email\" name=\"email\" color=\"secondary\" type=\"email\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Senha\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.senha\" name=\"senha\" color=\"secondary\" type=\"password\"></ion-input>\r\n      </ion-item>      \r\n    </form>\r\n    <div margin-top>\r\n      <ion-button size=\"medium\" expand=\"full\" shape=\"round\" color=\"secondary\" icon-right tappable (click)=\"salvar()\">\r\n        Salvar\r\n        <ion-icon name=\"checkmark-circle\"></ion-icon>\r\n      </ion-button>\r\n    </div>\r\n  </div>\r\n</ion-content>";
+    __webpack_exports__["default"] = "<ion-content padding class=\"login auth-page\">\r\n  <ion-toolbar color=\"primary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button color=\"light\"></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>\r\n      <ion-text color=\"light\">\r\n        <ion-text color=\"light\" class=\"fw700\">Usuário\r\n        </ion-text>\r\n      </ion-text>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n  <ion-toolbar color=\"primary\">\r\n    <div padding-horizontal text-center>\r\n      <div class=\"logo\"></div>\r\n      <h3 no-margin>\r\n        <ion-text color=\"light\" class=\"fw700\">\r\n          <ion-text color=\"light\">&nbsp;Inserindo</ion-text>\r\n        </ion-text>\r\n      </h3>\r\n    </div>\r\n  </ion-toolbar>\r\n  <div class=\"auth-content\">\r\n    <form class=\"list-form auth-conten\" (keydown)=\"keyDownFunction($event)\">\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp; Empresa\r\n        </ion-label>\r\n        <ionic-selectable  [(ngModel)]=\"usuario.pessoa.empresa\" item-content name=\"empresas\" [(items)]=\"empresas\"\r\n          closeButtonText=\"Cancelar\" itemTextField=\"nome\" itemValueField=\"id\" canSearch=\"true\"\r\n          [isConfirmButtonEnabled]=\"true\" (onSelect)=\"selecionarEmpresa($event)\">\r\n        </ionic-selectable>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Nome\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.pessoa.nome\" name=\"nome\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;CPF\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.pessoa.cpf\" name=\"cpf\" type=\"text\" placeholder=\" \" \r\n                   [brmasker]=\"{person: true}\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;RG\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.pessoa.rg\" name=\"rg\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Telefone\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.pessoa.telefone1\" name=\"telefone1\" type=\"text\" \r\n                   [brmasker]=\"{phone: true}\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Telefone 2\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.pessoa.telefone2\" name=\"telefone2\" type=\"text\" \r\n                   [brmasker]=\"{phone: true}\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;CEP\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.pessoa.cep\" name=\"cep\" type=\"text\" (ionBlur)= \"consultaCEP($event.target.value)\"\r\n                   [brmasker]=\"{mask:'00.000-000', len:10, userCaracters: true}\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Numero\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.pessoa.numero\" name=\"numero\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Complemento\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.pessoa.complemento\" name=\"complemento\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Logradouro\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.pessoa.logradouro\" name=\"logradouro\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Bairro\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.pessoa.bairro\" name=\"bairro\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Cidade\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.pessoa.cidade\" name=\"cidade\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;UF\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.pessoa.uf\" name=\"uf\" type=\"text\"></ion-input>\r\n      </ion-item>    \r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Estado\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.pessoa.estado\" name=\"estado\" type=\"text\"></ion-input>\r\n      </ion-item> \r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Login\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.login\" name=\"login\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;E-Mail\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.email\" name=\"email\" type=\"email\"></ion-input>\r\n      </ion-item>\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-label position=\"floating\">\r\n          &nbsp;Senha\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"usuario.senha\" name=\"senha\" type=\"password\"></ion-input>\r\n      </ion-item>     \r\n      <ion-grid>\r\n        <ion-row>\r\n            <ion-col size=\"12\" size-sm class=\"\">\r\n              <div>\r\n                <div>\r\n                  <ion-text>&nbsp;Foto</ion-text> \r\n                </div>\r\n                <div>  \r\n                  <ion-item no-padding class=\"animated fadeInUp\">   \r\n                    <input name=\"imgLogo\" type=\"file\" class=\"olho\" accept=\"image/*\"\r\n                           capture=\"camera\" (change)=\"onFileSelected($event)\" id=\"fileInput\" /> \r\n                  </ion-item> \r\n                </div>\r\n                <div>\r\n                  <ion-button fill=\"clear\" expand=\"full\" (click)=\"tirarFoto()\">\r\n                    <ion-icon slot=\"start\" name=\"camera\"></ion-icon>\r\n                      Tirar Foto\r\n                  </ion-button>  \r\n                </div>\r\n                <div>                \r\n                  <ion-img name=\"logo\" *ngIf=\"temFoto()\"\r\n                           [src]=\"base.getImagem(usuario.pessoa.foto)\"></ion-img> \r\n                </div>\r\n              </div>  \r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid> \r\n    </form>\r\n    <div margin-top>\r\n      <ion-button size=\"medium\" expand=\"full\" shape=\"round\" color=\"primary\" icon-right tappable (click)=\"salvar()\">\r\n        Salvar\r\n        <ion-icon name=\"checkmark-circle\" color=\"success\"></ion-icon>\r\n      </ion-button>\r\n    </div>\r\n  </div>\r\n</ion-content>";
     /***/
-  },
-
-  /***/
-  "./src/app/model/objetc/pessoa.ts":
-  /*!****************************************!*\
-    !*** ./src/app/model/objetc/pessoa.ts ***!
-    \****************************************/
-
-  /*! exports provided: Pessoa */
-
-  /***/
-  function srcAppModelObjetcPessoaTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "Pessoa", function () {
-      return Pessoa;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-
-    var Pessoa = function Pessoa() {
-      _classCallCheck(this, Pessoa);
-    };
-    /***/
-
   },
 
   /***/
@@ -219,7 +186,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".welcome-card ion-img {\n  max-height: 35vh;\n  overflow: hidden;\n}\n\n:host ion-content {\n  --background: linear-gradient(\n    135deg,\n    var(--ion-color-primary),\n    #ffffff\n  );\n}\n\n:host ion-item {\n  border-radius: 0;\n  border-bottom: 1px dotted var(--ion-color-medium);\n}\n\n:host ion-card.no-radius {\n  border-radius: 0;\n}\n\n.botao-cor {\n  color: black;\n}\n\n.olho {\n  cursor: pointer;\n  left: 94%;\n}\n\n.div-time {\n  top: 30px;\n  position: relative;\n}\n\n.my-avatar {\n  left: 37%;\n  position: relative;\n}\n\n.zoon-eliminado {\n  zoom: 0.6;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvdXN1YXJpby91c3VhcmlvLWluc2VyaXIvQzpcXFVzZXJzXFxyb2JlclxcT25lRHJpdmVcXGlvbmljXFxzaWdvYnJhLXVpL3NyY1xcYXBwXFxwYWdlc1xcdXN1YXJpb1xcdXN1YXJpby1pbnNlcmlyXFx1c3VhcmlvLWluc2VyaXIucGFnZS5zY3NzIiwic3JjL2FwcC9wYWdlcy91c3VhcmlvL3VzdWFyaW8taW5zZXJpci91c3VhcmlvLWluc2VyaXIucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQUE7RUFDQSxnQkFBQTtBQ0NKOztBREdJO0VBQ0U7Ozs7R0FBQTtBQ0lOOztBREdJO0VBQ0UsZ0JBQUE7RUFDQSxpREFBQTtBQ0ROOztBREtNO0VBQ0UsZ0JBQUE7QUNIUjs7QURRRTtFQUNFLFlBQUE7QUNMSjs7QURRRTtFQUNFLGVBQUE7RUFDQSxTQUFBO0FDTEo7O0FEU0U7RUFDRSxTQUFBO0VBQ0Esa0JBQUE7QUNOSjs7QURTRTtFQUNFLFNBQUE7RUFDQSxrQkFBQTtBQ05KOztBRFNFO0VBQ0UsU0FBQTtBQ05KIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvdXN1YXJpby91c3VhcmlvLWluc2VyaXIvdXN1YXJpby1pbnNlcmlyLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi53ZWxjb21lLWNhcmQgaW9uLWltZyB7XHJcbiAgICBtYXgtaGVpZ2h0OiAzNXZoO1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICB9XHJcbiAgXHJcbiAgOmhvc3Qge1xyXG4gICAgaW9uLWNvbnRlbnQge1xyXG4gICAgICAtLWJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudChcclxuICAgICAgICAxMzVkZWcsXHJcbiAgICAgICAgdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpLFxyXG4gICAgICAgICNmZmZmZmZcclxuICAgICAgKTtcclxuICAgIH1cclxuICBcclxuICAgIGlvbi1pdGVtIHtcclxuICAgICAgYm9yZGVyLXJhZGl1czogMDtcclxuICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IGRvdHRlZCB2YXIoLS1pb24tY29sb3ItbWVkaXVtKTtcclxuICAgIH1cclxuICBcclxuICAgIGlvbi1jYXJkIHtcclxuICAgICAgJi5uby1yYWRpdXMge1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDA7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbiAgXHJcbiAgLmJvdGFvLWNvciB7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgfVxyXG4gIFxyXG4gIC5vbGhvIHtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIGxlZnQ6IDk0JTtcclxuICAgIFxyXG4gIH1cclxuXHJcbiAgLmRpdi10aW1lIHtcclxuICAgIHRvcDogMzBweDtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICB9XHJcblxyXG4gIC5teS1hdmF0YXIge1xyXG4gICAgbGVmdDogMzclO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIH1cclxuXHJcbiAgLnpvb24tZWxpbWluYWRvIHtcclxuICAgIHpvb206IDAuNjtcclxuICB9IiwiLndlbGNvbWUtY2FyZCBpb24taW1nIHtcbiAgbWF4LWhlaWdodDogMzV2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cblxuOmhvc3QgaW9uLWNvbnRlbnQge1xuICAtLWJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudChcbiAgICAxMzVkZWcsXG4gICAgdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpLFxuICAgICNmZmZmZmZcbiAgKTtcbn1cbjpob3N0IGlvbi1pdGVtIHtcbiAgYm9yZGVyLXJhZGl1czogMDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IGRvdHRlZCB2YXIoLS1pb24tY29sb3ItbWVkaXVtKTtcbn1cbjpob3N0IGlvbi1jYXJkLm5vLXJhZGl1cyB7XG4gIGJvcmRlci1yYWRpdXM6IDA7XG59XG5cbi5ib3Rhby1jb3Ige1xuICBjb2xvcjogYmxhY2s7XG59XG5cbi5vbGhvIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBsZWZ0OiA5NCU7XG59XG5cbi5kaXYtdGltZSB7XG4gIHRvcDogMzBweDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuXG4ubXktYXZhdGFyIHtcbiAgbGVmdDogMzclO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG5cbi56b29uLWVsaW1pbmFkbyB7XG4gIHpvb206IDAuNjtcbn0iXX0= */";
+    __webpack_exports__["default"] = ".welcome-card ion-img {\n  max-height: 35vh;\n  overflow: hidden;\n}\n\n:host ion-content {\n  --background: var(--ion-color-success-shade);\n}\n\n:host ion-item {\n  border-radius: 0;\n  border-bottom: 1px dotted var(--ion-color-medium);\n}\n\n:host ion-card.no-radius {\n  border-radius: 0;\n}\n\n.botao-cor {\n  color: black;\n}\n\n.olho {\n  cursor: pointer;\n  left: 94%;\n}\n\n.div-time {\n  top: 30px;\n  position: relative;\n}\n\n.my-avatar {\n  left: 37%;\n  position: relative;\n}\n\n.zoon-eliminado {\n  zoom: 0.6;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvdXN1YXJpby91c3VhcmlvLWluc2VyaXIvQzpcXFVzZXJzXFxyb2JlclxcT25lRHJpdmVcXGlvbmljXFxzaWdvYnJhLXVpL3NyY1xcYXBwXFxwYWdlc1xcdXN1YXJpb1xcdXN1YXJpby1pbnNlcmlyXFx1c3VhcmlvLWluc2VyaXIucGFnZS5zY3NzIiwic3JjL2FwcC9wYWdlcy91c3VhcmlvL3VzdWFyaW8taW5zZXJpci91c3VhcmlvLWluc2VyaXIucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQUE7RUFDQSxnQkFBQTtBQ0NKOztBREdJO0VBQ0UsNENBQUE7QUNBTjs7QURHSTtFQUNFLGdCQUFBO0VBQ0EsaURBQUE7QUNETjs7QURLTTtFQUNFLGdCQUFBO0FDSFI7O0FEUUU7RUFDRSxZQUFBO0FDTEo7O0FEUUU7RUFDRSxlQUFBO0VBQ0EsU0FBQTtBQ0xKOztBRFNFO0VBQ0UsU0FBQTtFQUNBLGtCQUFBO0FDTko7O0FEU0U7RUFDRSxTQUFBO0VBQ0Esa0JBQUE7QUNOSjs7QURTRTtFQUNFLFNBQUE7QUNOSiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3VzdWFyaW8vdXN1YXJpby1pbnNlcmlyL3VzdWFyaW8taW5zZXJpci5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIud2VsY29tZS1jYXJkIGlvbi1pbWcge1xyXG4gICAgbWF4LWhlaWdodDogMzV2aDtcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgfVxyXG4gIFxyXG4gIDpob3N0IHtcclxuICAgIGlvbi1jb250ZW50IHtcclxuICAgICAgLS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3Itc3VjY2Vzcy1zaGFkZSk7XHJcbiAgICB9XHJcbiAgXHJcbiAgICBpb24taXRlbSB7XHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDA7XHJcbiAgICAgIGJvcmRlci1ib3R0b206IDFweCBkb3R0ZWQgdmFyKC0taW9uLWNvbG9yLW1lZGl1bSk7XHJcbiAgICB9XHJcbiAgXHJcbiAgICBpb24tY2FyZCB7XHJcbiAgICAgICYubm8tcmFkaXVzIHtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAwO1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG4gIFxyXG4gIC5ib3Rhby1jb3Ige1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG4gIH1cclxuICBcclxuICAub2xobyB7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBsZWZ0OiA5NCU7XHJcbiAgICBcclxuICB9XHJcblxyXG4gIC5kaXYtdGltZSB7XHJcbiAgICB0b3A6IDMwcHg7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgfVxyXG5cclxuICAubXktYXZhdGFyIHtcclxuICAgIGxlZnQ6IDM3JTtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICB9XHJcblxyXG4gIC56b29uLWVsaW1pbmFkbyB7XHJcbiAgICB6b29tOiAwLjY7XHJcbiAgfSIsIi53ZWxjb21lLWNhcmQgaW9uLWltZyB7XG4gIG1heC1oZWlnaHQ6IDM1dmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG59XG5cbjpob3N0IGlvbi1jb250ZW50IHtcbiAgLS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3Itc3VjY2Vzcy1zaGFkZSk7XG59XG46aG9zdCBpb24taXRlbSB7XG4gIGJvcmRlci1yYWRpdXM6IDA7XG4gIGJvcmRlci1ib3R0b206IDFweCBkb3R0ZWQgdmFyKC0taW9uLWNvbG9yLW1lZGl1bSk7XG59XG46aG9zdCBpb24tY2FyZC5uby1yYWRpdXMge1xuICBib3JkZXItcmFkaXVzOiAwO1xufVxuXG4uYm90YW8tY29yIHtcbiAgY29sb3I6IGJsYWNrO1xufVxuXG4ub2xobyB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgbGVmdDogOTQlO1xufVxuXG4uZGl2LXRpbWUge1xuICB0b3A6IDMwcHg7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cblxuLm15LWF2YXRhciB7XG4gIGxlZnQ6IDM3JTtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuXG4uem9vbi1lbGltaW5hZG8ge1xuICB6b29tOiAwLjY7XG59Il19 */";
     /***/
   },
 
@@ -290,17 +257,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _service_sigobra_empresa_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ../../../service/sigobra/empresa.service */
     "./src/app/service/sigobra/empresa.service.ts");
+    /* harmony import */
+
+
+    var _service_viacep_viacep_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! ./../../../service/viacep/viacep.service */
+    "./src/app/service/viacep/viacep.service.ts");
+    /* harmony import */
+
+
+    var _model_enums_estado_enum__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! ../../../model/enums/estado.enum */
+    "./src/app/model/enums/estado.enum.ts");
+    /* harmony import */
+
+
+    var _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! @ionic-native/Camera/ngx */
+    "./node_modules/@ionic-native/Camera/ngx/index.js");
 
     var UsuarioInserirPage = /*#__PURE__*/function () {
-      function UsuarioInserirPage(router, base, es, us) {
+      function UsuarioInserirPage(router, base, es, us, vcs, camera) {
         _classCallCheck(this, UsuarioInserirPage);
 
         this.router = router;
         this.base = base;
         this.es = es;
         this.us = us;
+        this.vcs = vcs;
+        this.camera = camera;
         this.usuario = new _model_objetc_usuario__WEBPACK_IMPORTED_MODULE_3__["Usuario"]();
-        this.pessoa = new _model_objetc_pessoa__WEBPACK_IMPORTED_MODULE_6__["Pessoa"]();
       }
 
       _createClass(UsuarioInserirPage, [{
@@ -309,12 +295,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          this.carregarEnpresas(" ");
-
           if (this.us.usuario !== undefined && this.us.usuario !== null) {
             this.usuario = this.us.usuario;
-            this.pessoa = this.usuario.pessoa;
+          } else {
+            this.usuario.pessoa = new _model_objetc_pessoa__WEBPACK_IMPORTED_MODULE_6__["Pessoa"]();
           }
+
+          this.carregarEnpresas(" ");
         }
       }, {
         key: "remover",
@@ -325,9 +312,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this = this;
 
           this.base.present();
-          this.pessoa.ativo = true;
+          this.usuario.pessoa.ativo = true;
           this.usuario.ativo = true;
-          this.usuario.pessoa = this.pessoa;
           this.us.salvar(this.usuario).subscribe(function (data) {
             _this.us.usuario = null;
 
@@ -362,7 +348,102 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "selecionarEmpresa",
         value: function selecionarEmpresa(event) {
-          this.pessoa.empresa = event.empresa;
+          this.usuario.pessoa.empresa = event.empresa;
+        }
+      }, {
+        key: "consultaCEP",
+        value: function consultaCEP(cep) {
+          var _this3 = this;
+
+          if (cep !== null && cep !== undefined && cep !== '') {
+            cep = cep.replace(/\D/g, '');
+
+            if (cep.length > 7) {
+              this.base.present();
+              this.vcs.consultaCEP(cep).subscribe(function (data) {
+                _this3.base.dismiss();
+
+                _this3.popula(data);
+              }, function (error) {
+                _this3.base.dismiss();
+
+                _this3.base.mensagemErro('Falha ao buscar CEP :' + _this3.base.tratarErro(error));
+              });
+            }
+          }
+        }
+      }, {
+        key: "popula",
+        value: function popula(data) {
+          if (data.erro !== undefined && data.erro !== null && data.erro) {
+            this.base.mensagemErro('Falha ao consultar endereço do CEP');
+            return;
+          }
+
+          this.usuario.pessoa.logradouro = data.logradouro;
+          this.usuario.pessoa.complemento = data.complemento;
+          this.usuario.pessoa.bairro = data.bairro;
+          this.usuario.pessoa.cidade = data.localidade;
+          this.usuario.pessoa.uf = data.uf;
+
+          for (var uf in _model_enums_estado_enum__WEBPACK_IMPORTED_MODULE_9__["Estado"]) {
+            if (data.uf === uf) {
+              this.usuario.pessoa.estado = _model_enums_estado_enum__WEBPACK_IMPORTED_MODULE_9__["Estado"][uf];
+              break;
+            }
+          }
+        }
+      }, {
+        key: "temFoto",
+        value: function temFoto() {
+          try {
+            return this.usuario.pessoa.foto !== null && this.usuario.pessoa.foto !== undefined;
+          } catch (error) {
+            return false;
+          }
+        }
+      }, {
+        key: "addFoto",
+        value: function addFoto(local) {
+          var _this4 = this;
+
+          var options = {
+            quality: 100,
+            destinationType: this.camera.DestinationType.FILE_URI,
+            encodingType: this.camera.EncodingType.JPEG,
+            mediaType: this.camera.MediaType.PICTURE,
+            sourceType: local
+          };
+          this.camera.getPicture(options).then(function (imageData) {
+            // imageData is either a base64 encoded string or a file URI
+            // If it's base64 (DATA_URL):
+            _this4.usuario.pessoa.foto = imageData;
+          }, function (err) {// Handle error
+          });
+        }
+      }, {
+        key: "tirarFoto",
+        value: function tirarFoto() {
+          this.addFoto(1);
+        }
+      }, {
+        key: "onFileSelected",
+        value: function onFileSelected(event) {
+          console.log(event);
+          var files = event.target.files;
+          var file = files[0];
+
+          if (files && file) {
+            var reader = new FileReader();
+            reader.onload = this.converteToBase64Depois.bind(this);
+            reader.readAsBinaryString(file);
+          }
+        }
+      }, {
+        key: "converteToBase64Depois",
+        value: function converteToBase64Depois(readerEvt) {
+          var binaryString = readerEvt.target.result;
+          this.usuario.pessoa.foto = btoa(binaryString);
         }
       }]);
 
@@ -378,6 +459,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _service_sigobra_empresa_service__WEBPACK_IMPORTED_MODULE_7__["EmpresaService"]
       }, {
         type: _service_sigobra_usuario_service__WEBPACK_IMPORTED_MODULE_1__["UsuarioService"]
+      }, {
+        type: _service_viacep_viacep_service__WEBPACK_IMPORTED_MODULE_8__["ViacepService"]
+      }, {
+        type: _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_10__["Camera"]
       }];
     };
 
@@ -389,7 +474,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./usuario-inserir.page.scss */
       "./src/app/pages/usuario/usuario-inserir/usuario-inserir.page.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"], _model_base__WEBPACK_IMPORTED_MODULE_2__["Base"], _service_sigobra_empresa_service__WEBPACK_IMPORTED_MODULE_7__["EmpresaService"], _service_sigobra_usuario_service__WEBPACK_IMPORTED_MODULE_1__["UsuarioService"]])], UsuarioInserirPage);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"], _model_base__WEBPACK_IMPORTED_MODULE_2__["Base"], _service_sigobra_empresa_service__WEBPACK_IMPORTED_MODULE_7__["EmpresaService"], _service_sigobra_usuario_service__WEBPACK_IMPORTED_MODULE_1__["UsuarioService"], _service_viacep_viacep_service__WEBPACK_IMPORTED_MODULE_8__["ViacepService"], _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_10__["Camera"]])], UsuarioInserirPage);
     /***/
   }
 }]);

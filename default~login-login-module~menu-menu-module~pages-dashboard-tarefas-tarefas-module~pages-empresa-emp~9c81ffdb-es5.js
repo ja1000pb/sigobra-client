@@ -4,7 +4,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"], {
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"], {
   /***/
   "./node_modules/file-saver/dist/FileSaver.min.js":
   /*!*******************************************************!*\
@@ -20007,76 +20007,85 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! @ionic-native/splash-screen/ngx */
-    "./node_modules/@ionic-native/splash-screen/ngx/index.js");
-    /* harmony import */
-
-
-    var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! @ionic-native/status-bar/ngx */
-    "./node_modules/@ionic-native/status-bar/ngx/index.js");
-    /* harmony import */
-
-
-    var _util_time_ago__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _util_time_ago__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ../util/time-ago */
     "./src/app/util/time-ago.ts");
     /* harmony import */
 
 
-    var _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @ionic-native/Camera/ngx */
     "./node_modules/@ionic-native/Camera/ngx/index.js");
     /* harmony import */
 
 
-    var _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ../components/notifications/notifications.component */
     "./src/app/components/notifications/notifications.component.ts");
     /* harmony import */
 
 
-    var moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! moment */
     "./node_modules/moment/moment.js");
     /* harmony import */
 
 
-    var moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_9__);
+    var moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_7__);
     /* harmony import */
 
 
-    var _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! @ionic-native/file-opener/ngx */
     "./node_modules/@ionic-native/file-opener/ngx/index.js");
     /* harmony import */
 
 
-    var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! @ionic-native/file/ngx */
     "./node_modules/@ionic-native/file/ngx/index.js");
     /* harmony import */
 
 
-    var file_saver__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    var file_saver__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! file-saver */
     "./node_modules/file-saver/dist/FileSaver.min.js");
     /* harmony import */
 
 
-    var file_saver__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(file_saver__WEBPACK_IMPORTED_MODULE_12__); //import 'rxjs/add/operator/map';
+    var file_saver__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(file_saver__WEBPACK_IMPORTED_MODULE_10__);
+    /* harmony import */
+
+
+    var _service_sigobra_usuario_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    /*! ../service/sigobra/usuario.service */
+    "./src/app/service/sigobra/usuario.service.ts");
+    /* harmony import */
+
+
+    var _service_autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    /*! ../service/autentificacao/autentificacao.service */
+    "./src/app/service/autentificacao/autentificacao.service.ts");
+    /* harmony import */
+
+
+    var _objetc_usuario__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    /*! ./objetc/usuario */
+    "./src/app/model/objetc/usuario.ts");
+    /* harmony import */
+
+
+    var _objetc_pessoa__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+    /*! ./objetc/pessoa */
+    "./src/app/model/objetc/pessoa.ts"); //import 'rxjs/add/operator/map';
 
 
     var Base = /*#__PURE__*/function () {
-      function Base(platform, splashScreen, statusBar, modalCtrl, menu, actionSheetCtrl, popoverCtrl, router, toast, loadingController, alertCtrl, timeAgo, camera, opener, file) {
+      function Base(platform, modalCtrl, actionSheetCtrl, popoverCtrl, router, toast, loadingController, alertCtrl, timeAgo, camera, opener, file, as, us) {
         _classCallCheck(this, Base);
 
         this.platform = platform;
-        this.splashScreen = splashScreen;
-        this.statusBar = statusBar;
         this.modalCtrl = modalCtrl;
-        this.menu = menu;
         this.actionSheetCtrl = actionSheetCtrl;
         this.popoverCtrl = popoverCtrl;
         this.router = router;
@@ -20087,6 +20096,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.camera = camera;
         this.opener = opener;
         this.file = file;
+        this.as = as;
+        this.us = us;
         this.isLoading = false;
       }
 
@@ -20102,24 +20113,27 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               while (1) {
                 switch (_context.prev = _context.next) {
                   case 0:
-                    _context.next = 2;
+                    //     msg =  msg.replace('\n', '</br>');
+                    //    msg =  msg.replace('#13#10', '</br>');
+                    msg = msg.split('\n').join('</br>');
+                    _context.next = 3;
                     return this.alertCtrl.create({
-                      header: "Erro",
+                      header: 'Erro',
                       message: msg,
                       buttons: [{
-                        text: "OK",
-                        role: "cancel",
-                        cssClass: "secondary",
+                        text: 'OK',
+                        role: 'cancel',
+                        cssClass: 'secondary',
                         handler: function handler() {}
                       }]
                     });
 
-                  case 2:
+                  case 3:
                     alert = _context.sent;
-                    _context.next = 5;
+                    _context.next = 6;
                     return alert.present();
 
-                  case 5:
+                  case 6:
                   case "end":
                     return _context.stop();
                 }
@@ -20138,12 +20152,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                   case 0:
                     _context2.next = 2;
                     return this.alertCtrl.create({
-                      header: "Atenção",
+                      header: 'Atenção',
                       message: msg,
                       buttons: [{
-                        text: "OK",
-                        role: "cancel",
-                        cssClass: "secondary",
+                        text: 'OK',
+                        role: 'cancel',
+                        cssClass: 'secondary',
                         handler: function handler() {}
                       }]
                     });
@@ -20162,31 +20176,32 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }));
         }
       }, {
-        key: "present",
-        value: function present() {
+        key: "mensagemAviso",
+        value: function mensagemAviso(msg, titulo) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-            var _this = this;
-
+            var alert;
             return regeneratorRuntime.wrap(function _callee3$(_context3) {
               while (1) {
                 switch (_context3.prev = _context3.next) {
                   case 0:
-                    this.isLoading = true;
-                    _context3.next = 3;
-                    return this.loadingController.create({
-                      message: "Carregando..."
-                    }).then(function (a) {
-                      a.present().then(function () {
-                        if (!_this.isLoading) {
-                          a.dismiss().then(function () {});
-                        }
-                      });
+                    _context3.next = 2;
+                    return this.alertCtrl.create({
+                      header: titulo ? titulo : 'Atenção',
+                      message: msg,
+                      buttons: [{
+                        text: 'OK',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: function handler() {}
+                      }]
                     });
 
-                  case 3:
-                    return _context3.abrupt("return", _context3.sent);
+                  case 2:
+                    alert = _context3.sent;
+                    _context3.next = 5;
+                    return alert.present();
 
-                  case 4:
+                  case 5:
                   case "end":
                     return _context3.stop();
                 }
@@ -20195,16 +20210,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }));
         }
       }, {
-        key: "dismiss",
-        value: function dismiss() {
+        key: "present",
+        value: function present(msg) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+            var _this = this;
+
             return regeneratorRuntime.wrap(function _callee4$(_context4) {
               while (1) {
                 switch (_context4.prev = _context4.next) {
                   case 0:
-                    this.isLoading = false;
+                    this.isLoading = true;
                     _context4.next = 3;
-                    return this.loadingController.dismiss().then(function () {});
+                    return this.loadingController.create({
+                      message: msg ? msg : 'Carregando...'
+                    }).then(function (a) {
+                      a.present().then(function () {
+                        if (!_this.isLoading) {
+                          a.dismiss().then(function () {});
+                        }
+                      });
+                    });
 
                   case 3:
                     return _context4.abrupt("return", _context4.sent);
@@ -20218,70 +20243,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }));
         }
       }, {
-        key: "getImagem",
-        value: function getImagem(value) {
-          if (value === undefined || value === null || value === '' || value === ' ') {
-            return "/assets/img/iconfinder_advantage_teamwork_1034367.png";
-          }
-
-          return "data:image/jpeg;base64," + value;
-        }
-      }, {
-        key: "toFloat",
-        value: function toFloat(value) {
-          var result = parseFloat(value.toString().replace(",", "."));
-          console.log(result);
-          return result;
-        }
-      }, {
-        key: "toMoney",
-        value: function toMoney(value) {
-          if (value.toString().indexOf(",") !== -1) {
-            return value.toString();
-          }
-
-          if (value.toString().indexOf(".") === -1) {
-            return value.toString() + ",00";
-          }
-
-          return value.toString().replace(".", ",");
-        }
-      }, {
-        key: "formatS",
-        value: function formatS(date) {
-          /*
-              let time = date.getTime().toString();
-              let dia = date.getDate().toString().split('-');
-              let s = dia[0] + '/' + dia[1] + '/' + dia[2] + ' ' + time.substring(0, 8); */
-          var teste = moment__WEBPACK_IMPORTED_MODULE_9__(date).format("DD/MM/YYYY HH:mm");
-          return teste;
-        }
-      }, {
-        key: "notifications",
-        value: function notifications(ev) {
+        key: "dismiss",
+        value: function dismiss() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
-            var popover;
             return regeneratorRuntime.wrap(function _callee5$(_context5) {
               while (1) {
                 switch (_context5.prev = _context5.next) {
                   case 0:
-                    _context5.next = 2;
-                    return this.popoverCtrl.create({
-                      component: _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_8__["NotificationsComponent"],
-                      event: ev,
-                      animated: true,
-                      showBackdrop: true
-                    });
+                    this.isLoading = false;
+                    _context5.next = 3;
+                    return this.loadingController.dismiss().then(function () {});
 
-                  case 2:
-                    popover = _context5.sent;
-                    _context5.next = 5;
-                    return popover.present();
-
-                  case 5:
+                  case 3:
                     return _context5.abrupt("return", _context5.sent);
 
-                  case 6:
+                  case 4:
                   case "end":
                     return _context5.stop();
                 }
@@ -20290,40 +20266,70 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }));
         }
       }, {
-        key: "presentAlertConfirm",
-        value: function presentAlertConfirm(funcao, valor, isto, msg) {
+        key: "getImagem",
+        value: function getImagem(value) {
+          if (value === undefined || value === null || value === '' || value === ' ') {
+            return '/assets/img/iconfinder_advantage_teamwork_1034367.png';
+          }
+
+          return 'data:image/jpeg;base64,' + value;
+        }
+      }, {
+        key: "toFloat",
+        value: function toFloat(value) {
+          var result = parseFloat(value.toString().replace(',', '.'));
+          console.log(result);
+          return result;
+        }
+      }, {
+        key: "toMoney",
+        value: function toMoney(value) {
+          if (value.toString().indexOf(',') !== -1) {
+            return value.toString();
+          }
+
+          if (value.toString().indexOf('.') === -1) {
+            return value.toString() + ',00';
+          }
+
+          return value.toString().replace('.', ',');
+        }
+      }, {
+        key: "formatS",
+        value: function formatS(date) {
+          /*
+              let time = date.getTime().toString();
+              let dia = date.getDate().toString().split('-');
+              let s = dia[0] + '/' + dia[1] + '/' + dia[2] + ' ' + time.substring(0, 8); */
+          var teste = moment__WEBPACK_IMPORTED_MODULE_7__(date).format('DD/MM/YYYY HH:mm');
+          return teste;
+        }
+      }, {
+        key: "notifications",
+        value: function notifications(ev) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
-            var alert;
+            var popover;
             return regeneratorRuntime.wrap(function _callee6$(_context6) {
               while (1) {
                 switch (_context6.prev = _context6.next) {
                   case 0:
                     _context6.next = 2;
-                    return this.alertCtrl.create({
-                      header: "Confirme!",
-                      message: "Messagem: <strong>" + msg + "</strong>!!!",
-                      buttons: [{
-                        text: "Cancel",
-                        role: "cancel",
-                        cssClass: "secondary",
-                        handler: function handler(blah) {
-                          console.log("Confirm Cancel: blah");
-                        }
-                      }, {
-                        text: "Okay",
-                        handler: function handler() {
-                          console.log("Confirm Okay");
-                          funcao(valor, isto);
-                        }
-                      }]
+                    return this.popoverCtrl.create({
+                      component: _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_6__["NotificationsComponent"],
+                      event: ev,
+                      animated: true,
+                      showBackdrop: true
                     });
 
                   case 2:
-                    alert = _context6.sent;
+                    popover = _context6.sent;
                     _context6.next = 5;
-                    return alert.present();
+                    return popover.present();
 
                   case 5:
+                    return _context6.abrupt("return", _context6.sent);
+
+                  case 6:
                   case "end":
                     return _context6.stop();
                 }
@@ -20332,8 +20338,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }));
         }
       }, {
-        key: "Confirma",
-        value: function Confirma(msg, funcao, paramentro) {
+        key: "presentAlertConfirm",
+        value: function presentAlertConfirm(funcao, valor, isto, msg) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
             var alert;
             return regeneratorRuntime.wrap(function _callee7$(_context7) {
@@ -20342,23 +20348,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                   case 0:
                     _context7.next = 2;
                     return this.alertCtrl.create({
-                      header: "Confirme!",
-                      message: "Messagem: <strong>" + msg + "</strong>!!!",
+                      header: 'Confirme!',
+                      message: 'Messagem: <strong>' + msg + '</strong>!!!',
                       buttons: [{
-                        text: "Cancelar",
-                        role: "cancel",
-                        cssClass: "secondary",
+                        text: 'Cancel',
+                        role: 'cancel',
+                        cssClass: 'secondary',
                         handler: function handler(blah) {
-                          return false;
+                          console.log('Confirm Cancel: blah');
                         }
                       }, {
-                        text: "Corfimar",
+                        text: 'Okay',
                         handler: function handler() {
-                          if (paramentro !== undefined) {
-                            funcao(paramentro);
-                          } else {
-                            funcao();
-                          }
+                          console.log('Confirm Okay');
+                          funcao(valor, isto);
                         }
                       }]
                     });
@@ -20377,10 +20380,57 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }));
         }
       }, {
+        key: "Confirma",
+        value: function Confirma(msg, funcao, paramentro) {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
+            var alert;
+            return regeneratorRuntime.wrap(function _callee8$(_context8) {
+              while (1) {
+                switch (_context8.prev = _context8.next) {
+                  case 0:
+                    _context8.next = 2;
+                    return this.alertCtrl.create({
+                      header: 'Confirme!',
+                      message: 'Messagem: <strong>' + msg + '</strong>!!!',
+                      buttons: [{
+                        text: 'Cancelar',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: function handler(blah) {
+                          return false;
+                        }
+                      }, {
+                        text: 'Corfimar',
+                        handler: function handler() {
+                          if (paramentro !== undefined) {
+                            funcao(paramentro);
+                          } else {
+                            funcao();
+                          }
+                        }
+                      }]
+                    });
+
+                  case 2:
+                    alert = _context8.sent;
+                    _context8.next = 5;
+                    return alert.present();
+
+                  case 5:
+                  case "end":
+                    return _context8.stop();
+                }
+              }
+            }, _callee8, this);
+          }));
+        }
+      }, {
         key: "tratarErro",
         value: function tratarErro(value) {
+          console.log(value);
+
           if (value.error === undefined) {
-            return value;
+            return value.toString();
           }
 
           if (value.error.mensagemUsuario !== undefined && value.error.mensagemUsuario !== null) {
@@ -20389,7 +20439,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             if (value.error.error_description !== undefined && value.error.error_description !== null) {
               return value.error.error_description;
             } else {
-              return 'Erro';
+              if (value.error instanceof Blob && value.error.type === 'application/json') {
+                return 'Nenhum dado encontrado';
+              } else {
+                return value.error.toString();
+              }
             }
           }
         }
@@ -20402,7 +20456,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             position: 'middle',
             //  closeButtonText: 'Yeah',
             animated: true,
-            cssClass: "my-custom-class"
+            cssClass: 'my-custom-class-sucesso'
           }).then(function (toastData) {
             console.log(toastData);
             toastData.present();
@@ -20418,12 +20472,265 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "abrirPDF",
         value: function abrirPDF(data, nome) {
-          this.save(data, nome + '.pdf');
+          var _this2 = this;
+
+          nome = nome + '.pdf';
+
+          if (this.platform.is('android')) {
+            var filePath = this.file.externalRootDirectory; //Write the file
+
+            this.file.writeFile(filePath, nome, data, {
+              replace: true
+            }).then(function () {
+              _this2.opener.open(filePath + nome, 'application/pdf')["catch"](function () {
+                console.log('Error opening pdf file');
+              });
+            })["catch"](function () {
+              console.error('Error writing pdf file');
+            });
+          } else {
+            this.save(data, nome);
+          }
         }
       }, {
         key: "save",
         value: function save(blob, fileName) {
-          file_saver__WEBPACK_IMPORTED_MODULE_12__["saveAs"](blob, fileName);
+          file_saver__WEBPACK_IMPORTED_MODULE_10__["saveAs"](blob, fileName);
+        }
+      }, {
+        key: "vazio",
+        value: function vazio(value) {
+          return value === undefined || value === null || value === '';
+        }
+      }, {
+        key: "atualizarSenha",
+        value: function atualizarSenha(usuario) {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
+            var _this3 = this;
+
+            var alert;
+            return regeneratorRuntime.wrap(function _callee9$(_context9) {
+              while (1) {
+                switch (_context9.prev = _context9.next) {
+                  case 0:
+                    _context9.next = 2;
+                    return this.alertCtrl.create({
+                      cssClass: 'my-custom-class-dialog',
+                      header: ' Alteração de Senha ',
+                      subHeader: 'Usuário: ' + usuario.login,
+                      backdropDismiss: false,
+                      inputs: [{
+                        name: 'senhaAntiga',
+                        type: 'password',
+                        placeholder: 'Senha antiga',
+                        min: -5,
+                        max: 10
+                      }, {
+                        name: 'novaSenha',
+                        type: 'password',
+                        placeholder: 'Nova senha',
+                        min: -5,
+                        max: 10
+                      }, {
+                        name: 'confirmacaoSenha',
+                        type: 'password',
+                        placeholder: 'Repita nova senha',
+                        min: -5,
+                        max: 10
+                      }],
+                      buttons: [{
+                        text: 'Cancelar',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: function handler(data) {
+                          console.log(data);
+
+                          if (_this3.as.deveAtualizarSenha) {
+                            _this3.mensagemErro('Usuario Deve Atualizar Senha !');
+
+                            _this3.as.logout();
+
+                            _this3.router.navigate(['login']);
+                          }
+                        }
+                      }, {
+                        text: 'Confirmar',
+                        handler: function handler(data) {
+                          if (data.novaSenha === undefined || data.novaSenha === null || data.novaSenha === '') {
+                            _this3.mensagemErro('Senha em branco');
+
+                            return false;
+                          }
+
+                          if (data.novaSenha !== data.confirmacaoSenha) {
+                            _this3.mensagemErro('Senhas dever ser iguais');
+
+                            return false;
+                          }
+
+                          _this3.present('Atualizando Senha');
+
+                          var msgErro = 'Erro ao atualizar senha :';
+                          usuario.senha = data.senhaAntiga;
+
+                          _this3.us.confirmaSenha(usuario).subscribe(function (retorno) {
+                            console.log(retorno);
+                            usuario.senha = data.novaSenha;
+
+                            _this3.us.salvarSoUsuario(usuario).subscribe(function () {
+                              _this3.dismiss();
+
+                              _this3.as.deveAtualizarSenha = false;
+
+                              _this3.mensagemAlerta('Senha alterada com sucesso');
+                            }, function (error) {
+                              _this3.dismiss();
+
+                              _this3.mensagemErro(msgErro + _this3.tratarErro(error));
+
+                              return false;
+                            });
+                          }, function (error) {
+                            _this3.mensagemErro(msgErro + _this3.tratarErro(error));
+
+                            _this3.dismiss();
+
+                            return false;
+                          });
+                        }
+                      }]
+                    });
+
+                  case 2:
+                    alert = _context9.sent;
+                    _context9.next = 5;
+                    return alert.present();
+
+                  case 5:
+                  case "end":
+                    return _context9.stop();
+                }
+              }
+            }, _callee9, this);
+          }));
+        }
+      }, {
+        key: "esqueceuSenha",
+        value: function esqueceuSenha() {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee10() {
+            var _this4 = this;
+
+            var alert;
+            return regeneratorRuntime.wrap(function _callee10$(_context10) {
+              while (1) {
+                switch (_context10.prev = _context10.next) {
+                  case 0:
+                    _context10.next = 2;
+                    return this.alertCtrl.create({
+                      cssClass: 'my-custom-class-dialog',
+                      header: ' Esqueceu Senha ',
+                      backdropDismiss: false,
+                      inputs: [{
+                        name: 'cpf',
+                        type: 'text',
+                        placeholder: 'CPF do usuário',
+                        min: -5,
+                        max: 10
+                      }, {
+                        name: 'novaSenha',
+                        type: 'password',
+                        placeholder: 'Nova senha',
+                        min: -5,
+                        max: 10
+                      }, {
+                        name: 'confirmacaoSenha',
+                        type: 'password',
+                        placeholder: 'Repita nova senha',
+                        min: -5,
+                        max: 10
+                      }],
+                      buttons: [{
+                        text: 'Cancelar',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: function handler(data) {
+                          console.log(data);
+
+                          if (_this4.as.deveAtualizarSenha) {
+                            _this4.mensagemErro('Usuário Deve Atualizar Senha !');
+
+                            _this4.as.logout();
+
+                            _this4.router.navigate(['login']);
+                          }
+                        }
+                      }, {
+                        text: 'Confirmar',
+                        handler: function handler(data) {
+                          if (data.cpf === undefined || data.cpf === null || data.cpf === '') {
+                            _this4.mensagemErro('CPF branco');
+
+                            return false;
+                          }
+
+                          if (data.novaSenha === undefined || data.novaSenha === null || data.novaSenha === '') {
+                            _this4.mensagemErro('Senha em branco ');
+
+                            return false;
+                          }
+
+                          if (data.novaSenha !== data.confirmacaoSenha) {
+                            _this4.mensagemErro('Senhas dever ser iguais');
+
+                            return false;
+                          }
+
+                          _this4.present('Atualizando Senha');
+
+                          var msgErro = 'Erro ao atualizar senha :';
+                          var usuario = new _objetc_usuario__WEBPACK_IMPORTED_MODULE_13__["Usuario"]();
+                          usuario.pessoa = new _objetc_pessoa__WEBPACK_IMPORTED_MODULE_14__["Pessoa"]();
+                          usuario.pessoa.cpf = data.cpf;
+                          usuario.senha = data.novaSenha;
+
+                          _this4.as.getNewTokenRegisto().subscribe(function (parameter) {
+                            _this4.as.token = parameter;
+
+                            _this4.us.esqueceuSenha(usuario).subscribe(function () {
+                              _this4.menssagemSucesso('Senha altera com sucesso');
+
+                              _this4.dismiss();
+
+                              _this4.as.token = null;
+                            }, function (error) {
+                              _this4.mensagemErro(msgErro + _this4.tratarErro(error));
+
+                              _this4.dismiss();
+
+                              _this4.as.token = null;
+                              return false;
+                            });
+                          }, function (error) {
+                            _this4.dismiss();
+
+                            _this4.as.token = null;
+                          });
+                        }
+                      }]
+                    });
+
+                  case 2:
+                    alert = _context10.sent;
+                    _context10.next = 5;
+                    return alert.present();
+
+                  case 5:
+                  case "end":
+                    return _context10.stop();
+                }
+              }
+            }, _callee10, this);
+          }));
         }
       }]);
 
@@ -20434,13 +20741,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       return [{
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"]
       }, {
-        type: _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__["SplashScreen"]
-      }, {
-        type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"]
-      }, {
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"]
-      }, {
-        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["MenuController"]
       }, {
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"]
       }, {
@@ -20454,20 +20755,213 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"]
       }, {
-        type: _util_time_ago__WEBPACK_IMPORTED_MODULE_6__["TimeAgo"]
+        type: _util_time_ago__WEBPACK_IMPORTED_MODULE_4__["TimeAgo"]
       }, {
-        type: _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_7__["Camera"]
+        type: _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_5__["Camera"]
       }, {
-        type: _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_10__["FileOpener"]
+        type: _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_8__["FileOpener"]
       }, {
-        type: _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_11__["File"]
+        type: _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_9__["File"]
+      }, {
+        type: _service_autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_12__["AutentificacaoService"]
+      }, {
+        type: _service_sigobra_usuario_service__WEBPACK_IMPORTED_MODULE_11__["UsuarioService"]
       }];
     };
 
     Base = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
       providedIn: 'root'
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"], _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__["SplashScreen"], _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["MenuController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["PopoverController"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ToastController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"], _util_time_ago__WEBPACK_IMPORTED_MODULE_6__["TimeAgo"], _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_7__["Camera"], _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_10__["FileOpener"], _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_11__["File"]])], Base);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["PopoverController"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ToastController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"], _util_time_ago__WEBPACK_IMPORTED_MODULE_4__["TimeAgo"], _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_5__["Camera"], _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_8__["FileOpener"], _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_9__["File"], _service_autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_12__["AutentificacaoService"], _service_sigobra_usuario_service__WEBPACK_IMPORTED_MODULE_11__["UsuarioService"]])], Base);
+    /***/
+  },
+
+  /***/
+  "./src/app/model/objetc/pessoa.ts":
+  /*!****************************************!*\
+    !*** ./src/app/model/objetc/pessoa.ts ***!
+    \****************************************/
+
+  /*! exports provided: Pessoa */
+
+  /***/
+  function srcAppModelObjetcPessoaTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "Pessoa", function () {
+      return Pessoa;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+
+    var Pessoa = function Pessoa() {
+      _classCallCheck(this, Pessoa);
+    };
+    /***/
+
+  },
+
+  /***/
+  "./src/app/model/objetc/usuario.ts":
+  /*!*****************************************!*\
+    !*** ./src/app/model/objetc/usuario.ts ***!
+    \*****************************************/
+
+  /*! exports provided: Usuario */
+
+  /***/
+  function srcAppModelObjetcUsuarioTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "Usuario", function () {
+      return Usuario;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+
+    var Usuario = function Usuario() {
+      _classCallCheck(this, Usuario);
+    };
+    /***/
+
+  },
+
+  /***/
+  "./src/app/service/sigobra/usuario.service.ts":
+  /*!****************************************************!*\
+    !*** ./src/app/service/sigobra/usuario.service.ts ***!
+    \****************************************************/
+
+  /*! exports provided: UsuarioService */
+
+  /***/
+  function srcAppServiceSigobraUsuarioServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "UsuarioService", function () {
+      return UsuarioService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../autentificacao/autentificacao.service */
+    "./src/app/service/autentificacao/autentificacao.service.ts");
+
+    var UsuarioService = /*#__PURE__*/function () {
+      function UsuarioService(http, as) {
+        _classCallCheck(this, UsuarioService);
+
+        this.http = http;
+        this.as = as;
+        this.url = '/usuario';
+        this.imagem = '/imagemusuario';
+      }
+
+      _createClass(UsuarioService, [{
+        key: "salvar",
+        value: function salvar(usuario) {
+          return this.http.post(this.as.url + this.url, usuario, this.as.getOptions());
+        }
+      }, {
+        key: "salvarSoUsuario",
+        value: function salvarSoUsuario(usuario) {
+          return this.http.post(this.as.url + this.url + '/alterarsenha', usuario, this.as.getOptions());
+        }
+      }, {
+        key: "getToken",
+        value: function getToken(usuario) {
+          return this.http.post(this.as.url + this.as.urlToken, this.as.getBodyToken(usuario.email, usuario.senha), this.as.getOptionsToken());
+        }
+      }, {
+        key: "logar",
+        value: function logar(usuario) {
+          return this.http.post(this.as.url + this.url + '/logar', usuario, this.as.getOptions());
+        }
+      }, {
+        key: "getImagem",
+        value: function getImagem(id) {
+          return this.http.get(this.as.url + this.url + this.imagem + '/' + id.toString(), this.as.getOptions());
+        }
+      }, {
+        key: "pesquisar",
+        value: function pesquisar(value) {
+          return this.http.post(this.as.url + this.url + '/pesquisar', value, this.as.getOptions());
+        }
+      }, {
+        key: "pesquisa",
+        value: function pesquisa(value) {
+          return this.http.post(this.as.url + this.url + '/pesquisa', value, this.as.getOptions());
+        }
+      }, {
+        key: "confirmaSenha",
+        value: function confirmaSenha(usuario) {
+          return this.http.post(this.as.url + this.url + '/confirmasenha', usuario, this.as.getOptions());
+        }
+      }, {
+        key: "esqueceuSenha",
+        value: function esqueceuSenha(usuario) {
+          return this.http.post(this.as.url + this.url + '/esqueceusenha', usuario, this.as.getOptions());
+        }
+      }, {
+        key: "byusuario",
+        value: function byusuario(value) {
+          return this.http.post(this.as.url + this.url + '/byusuario', value, this.as.getOptions());
+        }
+      }]);
+
+      return UsuarioService;
+    }();
+
+    UsuarioService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+      }, {
+        type: _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"]
+      }];
+    };
+
+    UsuarioService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"]])], UsuarioService);
     /***/
   }
 }]);
-//# sourceMappingURL=default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f-es5.js.map
+//# sourceMappingURL=default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb-es5.js.map

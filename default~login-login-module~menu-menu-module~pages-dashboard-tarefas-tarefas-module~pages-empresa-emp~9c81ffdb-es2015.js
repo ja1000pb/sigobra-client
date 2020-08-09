@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"],{
 
 /***/ "./node_modules/file-saver/dist/FileSaver.min.js":
 /*!*******************************************************!*\
@@ -20922,19 +20922,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
-/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
-/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
-/* harmony import */ var _util_time_ago__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/time-ago */ "./src/app/util/time-ago.ts");
-/* harmony import */ var _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/Camera/ngx */ "./node_modules/@ionic-native/Camera/ngx/index.js");
-/* harmony import */ var _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/notifications/notifications.component */ "./src/app/components/notifications/notifications.component.ts");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic-native/file-opener/ngx */ "./node_modules/@ionic-native/file-opener/ngx/index.js");
-/* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/file/ngx */ "./node_modules/@ionic-native/file/ngx/index.js");
-/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! file-saver */ "./node_modules/file-saver/dist/FileSaver.min.js");
-/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(file_saver__WEBPACK_IMPORTED_MODULE_12__);
-
-
+/* harmony import */ var _util_time_ago__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/time-ago */ "./src/app/util/time-ago.ts");
+/* harmony import */ var _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/Camera/ngx */ "./node_modules/@ionic-native/Camera/ngx/index.js");
+/* harmony import */ var _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/notifications/notifications.component */ "./src/app/components/notifications/notifications.component.ts");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/file-opener/ngx */ "./node_modules/@ionic-native/file-opener/ngx/index.js");
+/* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/file/ngx */ "./node_modules/@ionic-native/file/ngx/index.js");
+/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! file-saver */ "./node_modules/file-saver/dist/FileSaver.min.js");
+/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(file_saver__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _service_sigobra_usuario_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../service/sigobra/usuario.service */ "./src/app/service/sigobra/usuario.service.ts");
+/* harmony import */ var _service_autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../service/autentificacao/autentificacao.service */ "./src/app/service/autentificacao/autentificacao.service.ts");
+/* harmony import */ var _objetc_usuario__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./objetc/usuario */ "./src/app/model/objetc/usuario.ts");
+/* harmony import */ var _objetc_pessoa__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./objetc/pessoa */ "./src/app/model/objetc/pessoa.ts");
 
 
 
@@ -20947,13 +20947,14 @@ __webpack_require__.r(__webpack_exports__);
 
 //import 'rxjs/add/operator/map';
 
+
+
+
+
 let Base = class Base {
-    constructor(platform, splashScreen, statusBar, modalCtrl, menu, actionSheetCtrl, popoverCtrl, router, toast, loadingController, alertCtrl, timeAgo, camera, opener, file) {
+    constructor(platform, modalCtrl, actionSheetCtrl, popoverCtrl, router, toast, loadingController, alertCtrl, timeAgo, camera, opener, file, as, us) {
         this.platform = platform;
-        this.splashScreen = splashScreen;
-        this.statusBar = statusBar;
         this.modalCtrl = modalCtrl;
-        this.menu = menu;
         this.actionSheetCtrl = actionSheetCtrl;
         this.popoverCtrl = popoverCtrl;
         this.router = router;
@@ -20964,20 +20965,25 @@ let Base = class Base {
         this.camera = camera;
         this.opener = opener;
         this.file = file;
+        this.as = as;
+        this.us = us;
         this.isLoading = false;
     }
     ngOnInit() {
     }
     mensagemErro(msg) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            //     msg =  msg.replace('\n', '</br>');
+            //    msg =  msg.replace('#13#10', '</br>');
+            msg = msg.split('\n').join('</br>');
             const alert = yield this.alertCtrl.create({
-                header: "Erro",
+                header: 'Erro',
                 message: msg,
                 buttons: [
                     {
-                        text: "OK",
-                        role: "cancel",
-                        cssClass: "secondary",
+                        text: 'OK',
+                        role: 'cancel',
+                        cssClass: 'secondary',
                         handler: () => { }
                     }
                 ]
@@ -20988,13 +20994,13 @@ let Base = class Base {
     mensagemAlerta(msg) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             const alert = yield this.alertCtrl.create({
-                header: "Atenção",
+                header: 'Atenção',
                 message: msg,
                 buttons: [
                     {
-                        text: "OK",
-                        role: "cancel",
-                        cssClass: "secondary",
+                        text: 'OK',
+                        role: 'cancel',
+                        cssClass: 'secondary',
                         handler: () => { }
                     }
                 ]
@@ -21002,12 +21008,29 @@ let Base = class Base {
             yield alert.present();
         });
     }
-    present() {
+    mensagemAviso(msg, titulo) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const alert = yield this.alertCtrl.create({
+                header: titulo ? titulo : 'Atenção',
+                message: msg,
+                buttons: [
+                    {
+                        text: 'OK',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: () => { }
+                    }
+                ]
+            });
+            yield alert.present();
+        });
+    }
+    present(msg) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             this.isLoading = true;
             return yield this.loadingController
                 .create({
-                message: "Carregando..."
+                message: msg ? msg : 'Carregando...'
             })
                 .then(a => {
                 a.present().then(() => {
@@ -21026,36 +21049,36 @@ let Base = class Base {
     }
     getImagem(value) {
         if ((value === undefined) || (value === null) || (value === '') || (value === ' ')) {
-            return "/assets/img/iconfinder_advantage_teamwork_1034367.png";
+            return '/assets/img/iconfinder_advantage_teamwork_1034367.png';
         }
-        return "data:image/jpeg;base64," + value;
+        return 'data:image/jpeg;base64,' + value;
     }
     toFloat(value) {
-        const result = parseFloat(value.toString().replace(",", "."));
+        const result = parseFloat(value.toString().replace(',', '.'));
         console.log(result);
         return result;
     }
     toMoney(value) {
-        if (value.toString().indexOf(",") !== -1) {
+        if (value.toString().indexOf(',') !== -1) {
             return value.toString();
         }
-        if (value.toString().indexOf(".") === -1) {
-            return value.toString() + ",00";
+        if (value.toString().indexOf('.') === -1) {
+            return value.toString() + ',00';
         }
-        return value.toString().replace(".", ",");
+        return value.toString().replace('.', ',');
     }
     formatS(date) {
         /*
             let time = date.getTime().toString();
             let dia = date.getDate().toString().split('-');
             let s = dia[0] + '/' + dia[1] + '/' + dia[2] + ' ' + time.substring(0, 8); */
-        const teste = moment__WEBPACK_IMPORTED_MODULE_9__(date).format("DD/MM/YYYY HH:mm");
+        const teste = moment__WEBPACK_IMPORTED_MODULE_7__(date).format('DD/MM/YYYY HH:mm');
         return teste;
     }
     notifications(ev) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             const popover = yield this.popoverCtrl.create({
-                component: _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_8__["NotificationsComponent"],
+                component: _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_6__["NotificationsComponent"],
                 event: ev,
                 animated: true,
                 showBackdrop: true
@@ -21066,21 +21089,21 @@ let Base = class Base {
     presentAlertConfirm(funcao, valor, isto, msg) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             const alert = yield this.alertCtrl.create({
-                header: "Confirme!",
-                message: "Messagem: <strong>" + msg + "</strong>!!!",
+                header: 'Confirme!',
+                message: 'Messagem: <strong>' + msg + '</strong>!!!',
                 buttons: [
                     {
-                        text: "Cancel",
-                        role: "cancel",
-                        cssClass: "secondary",
+                        text: 'Cancel',
+                        role: 'cancel',
+                        cssClass: 'secondary',
                         handler: blah => {
-                            console.log("Confirm Cancel: blah");
+                            console.log('Confirm Cancel: blah');
                         }
                     },
                     {
-                        text: "Okay",
+                        text: 'Okay',
                         handler: () => {
-                            console.log("Confirm Okay");
+                            console.log('Confirm Okay');
                             funcao(valor, isto);
                         }
                     }
@@ -21092,19 +21115,19 @@ let Base = class Base {
     Confirma(msg, funcao, paramentro) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             const alert = yield this.alertCtrl.create({
-                header: "Confirme!",
-                message: "Messagem: <strong>" + msg + "</strong>!!!",
+                header: 'Confirme!',
+                message: 'Messagem: <strong>' + msg + '</strong>!!!',
                 buttons: [
                     {
-                        text: "Cancelar",
-                        role: "cancel",
-                        cssClass: "secondary",
+                        text: 'Cancelar',
+                        role: 'cancel',
+                        cssClass: 'secondary',
                         handler: blah => {
                             return false;
                         }
                     },
                     {
-                        text: "Corfimar",
+                        text: 'Corfimar',
                         handler: () => {
                             if (paramentro !== undefined) {
                                 funcao(paramentro);
@@ -21120,8 +21143,9 @@ let Base = class Base {
         });
     }
     tratarErro(value) {
+        console.log(value);
         if (value.error === undefined) {
-            return value;
+            return value.toString();
         }
         if (value.error.mensagemUsuario !== undefined &&
             value.error.mensagemUsuario !== null) {
@@ -21133,7 +21157,12 @@ let Base = class Base {
                 return value.error.error_description;
             }
             else {
-                return 'Erro';
+                if (value.error instanceof Blob && value.error.type === 'application/json') {
+                    return 'Nenhum dado encontrado';
+                }
+                else {
+                    return value.error.toString();
+                }
             }
         }
     }
@@ -21144,7 +21173,7 @@ let Base = class Base {
             position: 'middle',
             //  closeButtonText: 'Yeah',
             animated: true,
-            cssClass: "my-custom-class"
+            cssClass: 'my-custom-class-sucesso'
         }).then((toastData) => {
             console.log(toastData);
             toastData.present();
@@ -21156,53 +21185,347 @@ let Base = class Base {
         return result;
     }
     abrirPDF(data, nome) {
-        this.save(data, nome + '.pdf');
+        nome = nome + '.pdf';
+        if (this.platform.is('android')) {
+            let filePath = this.file.externalRootDirectory;
+            //Write the file
+            this.file.writeFile(filePath, nome, data, { replace: true })
+                .then(() => {
+                this.opener.open(filePath + nome, 'application/pdf')
+                    .catch(() => {
+                    console.log('Error opening pdf file');
+                });
+            })
+                .catch(() => {
+                console.error('Error writing pdf file');
+            });
+        }
+        else {
+            this.save(data, nome);
+        }
     }
     save(blob, fileName) {
-        file_saver__WEBPACK_IMPORTED_MODULE_12__["saveAs"](blob, fileName);
+        file_saver__WEBPACK_IMPORTED_MODULE_10__["saveAs"](blob, fileName);
+    }
+    vazio(value) {
+        return value === undefined || value === null || value === '';
+    }
+    atualizarSenha(usuario) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const alert = yield this.alertCtrl.create({
+                cssClass: 'my-custom-class-dialog',
+                header: ' Alteração de Senha ',
+                subHeader: 'Usuário: ' + usuario.login,
+                backdropDismiss: false,
+                inputs: [
+                    {
+                        name: 'senhaAntiga',
+                        type: 'password',
+                        placeholder: 'Senha antiga',
+                        min: -5,
+                        max: 10
+                    },
+                    {
+                        name: 'novaSenha',
+                        type: 'password',
+                        placeholder: 'Nova senha',
+                        min: -5,
+                        max: 10
+                    },
+                    {
+                        name: 'confirmacaoSenha',
+                        type: 'password',
+                        placeholder: 'Repita nova senha',
+                        min: -5,
+                        max: 10
+                    }
+                ],
+                buttons: [
+                    {
+                        text: 'Cancelar',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: data => {
+                            console.log(data);
+                            if (this.as.deveAtualizarSenha) {
+                                this.mensagemErro('Usuario Deve Atualizar Senha !');
+                                this.as.logout();
+                                this.router.navigate(['login']);
+                            }
+                        }
+                    },
+                    {
+                        text: 'Confirmar',
+                        handler: (data) => {
+                            if (data.novaSenha === undefined || data.novaSenha === null || data.novaSenha === '') {
+                                this.mensagemErro('Senha em branco');
+                                return false;
+                            }
+                            if (data.novaSenha !== data.confirmacaoSenha) {
+                                this.mensagemErro('Senhas dever ser iguais');
+                                return false;
+                            }
+                            this.present('Atualizando Senha');
+                            const msgErro = 'Erro ao atualizar senha :';
+                            usuario.senha = data.senhaAntiga;
+                            this.us.confirmaSenha(usuario).subscribe(retorno => {
+                                console.log(retorno);
+                                usuario.senha = data.novaSenha;
+                                this.us.salvarSoUsuario(usuario).subscribe(() => {
+                                    this.dismiss();
+                                    this.as.deveAtualizarSenha = false;
+                                    this.mensagemAlerta('Senha alterada com sucesso');
+                                }, error => {
+                                    this.dismiss();
+                                    this.mensagemErro(msgErro + this.tratarErro(error));
+                                    return false;
+                                });
+                            }, error => {
+                                this.mensagemErro(msgErro + this.tratarErro(error));
+                                this.dismiss();
+                                return false;
+                            });
+                        }
+                    }
+                ]
+            });
+            yield alert.present();
+        });
+    }
+    esqueceuSenha() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const alert = yield this.alertCtrl.create({
+                cssClass: 'my-custom-class-dialog',
+                header: ' Esqueceu Senha ',
+                backdropDismiss: false,
+                inputs: [
+                    {
+                        name: 'cpf',
+                        type: 'text',
+                        placeholder: 'CPF do usuário',
+                        min: -5,
+                        max: 10
+                    },
+                    {
+                        name: 'novaSenha',
+                        type: 'password',
+                        placeholder: 'Nova senha',
+                        min: -5,
+                        max: 10
+                    },
+                    {
+                        name: 'confirmacaoSenha',
+                        type: 'password',
+                        placeholder: 'Repita nova senha',
+                        min: -5,
+                        max: 10
+                    }
+                ],
+                buttons: [
+                    {
+                        text: 'Cancelar',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: data => {
+                            console.log(data);
+                            if (this.as.deveAtualizarSenha) {
+                                this.mensagemErro('Usuário Deve Atualizar Senha !');
+                                this.as.logout();
+                                this.router.navigate(['login']);
+                            }
+                        }
+                    },
+                    {
+                        text: 'Confirmar',
+                        handler: (data) => {
+                            if (data.cpf === undefined || data.cpf === null || data.cpf === '') {
+                                this.mensagemErro('CPF branco');
+                                return false;
+                            }
+                            if (data.novaSenha === undefined || data.novaSenha === null || data.novaSenha === '') {
+                                this.mensagemErro('Senha em branco ');
+                                return false;
+                            }
+                            if (data.novaSenha !== data.confirmacaoSenha) {
+                                this.mensagemErro('Senhas dever ser iguais');
+                                return false;
+                            }
+                            this.present('Atualizando Senha');
+                            const msgErro = 'Erro ao atualizar senha :';
+                            const usuario = new _objetc_usuario__WEBPACK_IMPORTED_MODULE_13__["Usuario"]();
+                            usuario.pessoa = new _objetc_pessoa__WEBPACK_IMPORTED_MODULE_14__["Pessoa"]();
+                            usuario.pessoa.cpf = data.cpf;
+                            usuario.senha = data.novaSenha;
+                            this.as.getNewTokenRegisto().subscribe((parameter) => {
+                                this.as.token = parameter;
+                                this.us.esqueceuSenha(usuario).subscribe(() => {
+                                    this.menssagemSucesso('Senha altera com sucesso');
+                                    this.dismiss();
+                                    this.as.token = null;
+                                }, error => {
+                                    this.mensagemErro(msgErro + this.tratarErro(error));
+                                    this.dismiss();
+                                    this.as.token = null;
+                                    return false;
+                                });
+                            }, error => {
+                                this.dismiss();
+                                this.as.token = null;
+                            });
+                        }
+                    }
+                ]
+            });
+            yield alert.present();
+        });
     }
 };
 Base.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"] },
-    { type: _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__["SplashScreen"] },
-    { type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["MenuController"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["PopoverController"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ToastController"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"] },
-    { type: _util_time_ago__WEBPACK_IMPORTED_MODULE_6__["TimeAgo"] },
-    { type: _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_7__["Camera"] },
-    { type: _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_10__["FileOpener"] },
-    { type: _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_11__["File"] }
+    { type: _util_time_ago__WEBPACK_IMPORTED_MODULE_4__["TimeAgo"] },
+    { type: _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_5__["Camera"] },
+    { type: _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_8__["FileOpener"] },
+    { type: _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_9__["File"] },
+    { type: _service_autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_12__["AutentificacaoService"] },
+    { type: _service_sigobra_usuario_service__WEBPACK_IMPORTED_MODULE_11__["UsuarioService"] }
 ];
 Base = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
         providedIn: 'root'
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"],
-        _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__["SplashScreen"],
-        _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"],
         _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"],
-        _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["MenuController"],
         _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"],
         _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["PopoverController"],
         _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
         _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ToastController"],
         _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"],
         _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"],
-        _util_time_ago__WEBPACK_IMPORTED_MODULE_6__["TimeAgo"],
-        _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_7__["Camera"],
-        _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_10__["FileOpener"],
-        _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_11__["File"]])
+        _util_time_ago__WEBPACK_IMPORTED_MODULE_4__["TimeAgo"],
+        _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_5__["Camera"],
+        _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_8__["FileOpener"],
+        _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_9__["File"],
+        _service_autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_12__["AutentificacaoService"],
+        _service_sigobra_usuario_service__WEBPACK_IMPORTED_MODULE_11__["UsuarioService"]])
 ], Base);
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/objetc/pessoa.ts":
+/*!****************************************!*\
+  !*** ./src/app/model/objetc/pessoa.ts ***!
+  \****************************************/
+/*! exports provided: Pessoa */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Pessoa", function() { return Pessoa; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class Pessoa {
+}
+
+
+/***/ }),
+
+/***/ "./src/app/model/objetc/usuario.ts":
+/*!*****************************************!*\
+  !*** ./src/app/model/objetc/usuario.ts ***!
+  \*****************************************/
+/*! exports provided: Usuario */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Usuario", function() { return Usuario; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class Usuario {
+}
+
+
+/***/ }),
+
+/***/ "./src/app/service/sigobra/usuario.service.ts":
+/*!****************************************************!*\
+  !*** ./src/app/service/sigobra/usuario.service.ts ***!
+  \****************************************************/
+/*! exports provided: UsuarioService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsuarioService", function() { return UsuarioService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../autentificacao/autentificacao.service */ "./src/app/service/autentificacao/autentificacao.service.ts");
+
+
+
+
+let UsuarioService = class UsuarioService {
+    constructor(http, as) {
+        this.http = http;
+        this.as = as;
+        this.url = '/usuario';
+        this.imagem = '/imagemusuario';
+    }
+    salvar(usuario) {
+        return this.http.post(this.as.url + this.url, usuario, this.as.getOptions());
+    }
+    salvarSoUsuario(usuario) {
+        return this.http.post(this.as.url + this.url + '/alterarsenha', usuario, this.as.getOptions());
+    }
+    getToken(usuario) {
+        return this.http.post(this.as.url + this.as.urlToken, this.as.getBodyToken(usuario.email, usuario.senha), this.as.getOptionsToken());
+    }
+    logar(usuario) {
+        return this.http.post(this.as.url + this.url + '/logar', usuario, this.as.getOptions());
+    }
+    getImagem(id) {
+        return this.http.get(this.as.url + this.url + this.imagem + '/' + id.toString(), this.as.getOptions());
+    }
+    pesquisar(value) {
+        return this.http.post(this.as.url + this.url + '/pesquisar', value, this.as.getOptions());
+    }
+    pesquisa(value) {
+        return this.http.post(this.as.url + this.url + '/pesquisa', value, this.as.getOptions());
+    }
+    confirmaSenha(usuario) {
+        return this.http.post(this.as.url + this.url + '/confirmasenha', usuario, this.as.getOptions());
+    }
+    esqueceuSenha(usuario) {
+        return this.http.post(this.as.url + this.url + '/esqueceusenha', usuario, this.as.getOptions());
+    }
+    byusuario(value) {
+        return this.http.post(this.as.url + this.url + '/byusuario', value, this.as.getOptions());
+    }
+};
+UsuarioService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+    { type: _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"] }
+];
+UsuarioService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"]])
+], UsuarioService);
 
 
 
 /***/ })
 
 }]);
-//# sourceMappingURL=default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f-es2015.js.map
+//# sourceMappingURL=default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb-es2015.js.map

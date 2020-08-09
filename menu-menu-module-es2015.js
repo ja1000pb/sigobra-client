@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-menu contentId=\"my-content\">\r\n  <ion-header>\r\n    <ion-toolbar color=\"dark\" class=\"user-profile\">\r\n\r\n      <ion-item margin-bottom>\r\n        <ion-label>\r\n          <ion-text color=\"medium\">\r\n            <h1><strong>{{ usuario.login }}</strong></h1>     \r\n          </ion-text>\r\n           <ion-menu-toggle class=\"mto\" auto-hide=\"false\">\r\n             <ion-text color=\"secondary\"> | </ion-text>\r\n            <a class=\"text10\" tappable>\r\n              <ion-text color=\"medium\" (click)=\"logout()\">\r\n                <ion-icon name=\"log-out\"></ion-icon>\r\n                <strong>sair</strong>\r\n              </ion-text>\r\n            </a>\r\n          </ion-menu-toggle>\r\n        </ion-label>\r\n      </ion-item>\r\n\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  <ion-content class=\"bg-profile\" id=\"my-content\">\r\n    <div *ngFor=\"let p of appPages\">\r\n      <ion-menu-toggle auto-hide=\"false\" *ngIf=\"p.url\">\r\n        <ion-item [routerDirection]=\"'root'\" [routerLink]=\"[p.url]\">\r\n          <ion-icon slot=\"start\" [name]=\"p.icon\" [src]=\"p.src\" ></ion-icon>\r\n          <ion-label>\r\n            {{p.title}}\r\n          </ion-label>\r\n        </ion-item>\r\n      </ion-menu-toggle>\r\n\r\n    </div>\r\n  </ion-content>\r\n</ion-menu>\r\n<ion-router-outlet main></ion-router-outlet>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-menu contentId=\"my-content\">\r\n  <ion-header>\r\n    <ion-toolbar color=\"dark\" class=\"user-profile\">\r\n\r\n      <ion-item margin-bottom>\r\n        <ion-avatar slot=\"start\" class=\"user-avatar\">\r\n          <ion-img [src]=\"getImagemPerfil()\"></ion-img>\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <ion-text color=\"medium\">\r\n            <h1><strong>{{ usuario.login }}</strong></h1>     \r\n          </ion-text>\r\n           <ion-menu-toggle class=\"mto\" auto-hide=\"false\">\r\n            <a class=\"text10\" tappable>\r\n              <ion-text color=\"medium\" (click)=\"alteraSenha()\">\r\n                <ion-icon name=\"keypad\"></ion-icon>\r\n                <strong>Alterar Senha </strong>\r\n              </ion-text>\r\n            </a>\r\n             <ion-text color=\"secondary\"> | </ion-text>\r\n            <a class=\"text10\" tappable>\r\n              <ion-text color=\"medium\" (click)=\"logout()\">\r\n                <ion-icon name=\"log-out\"></ion-icon>\r\n                <strong>sair</strong>\r\n              </ion-text>\r\n            </a>\r\n          </ion-menu-toggle>\r\n        </ion-label>\r\n      </ion-item>\r\n\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  <ion-content class=\"bg-profile\" id=\"my-content\">\r\n    <div *ngFor=\"let p of appPages\">\r\n      <ion-menu-toggle auto-hide=\"false\" *ngIf=\"p.url\">\r\n        <ion-item [routerDirection]=\"'root'\" [routerLink]=\"[p.url]\">\r\n          <ion-icon slot=\"start\" [name]=\"p.icon\" [src]=\"p.src\" ></ion-icon>\r\n          <ion-label>\r\n            {{p.title}}\r\n          </ion-label>\r\n        </ion-item>\r\n      </ion-menu-toggle>\r\n\r\n    </div>\r\n  </ion-content>\r\n</ion-menu>\r\n<ion-router-outlet main></ion-router-outlet>");
 
 /***/ }),
 
@@ -94,6 +94,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _model_base__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../model/base */ "./src/app/model/base.ts");
 /* harmony import */ var _service_autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../service/autentificacao/autentificacao.service */ "./src/app/service/autentificacao/autentificacao.service.ts");
+/* harmony import */ var _service_sigobra_empresa_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../service/sigobra/empresa.service */ "./src/app/service/sigobra/empresa.service.ts");
+
 
 
 
@@ -102,11 +104,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let MenuPage = class MenuPage {
-    constructor(us, base, as, router) {
+    constructor(us, base, as, router, es) {
         this.us = us;
         this.base = base;
         this.as = as;
         this.router = router;
+        this.es = es;
         this.usuario = new _model_objetc_usuario__WEBPACK_IMPORTED_MODULE_1__["Usuario"]();
         this.appPages = [
             {
@@ -141,7 +144,7 @@ let MenuPage = class MenuPage {
                 url: '/tarefas',
             },
             {
-                title: 'Usuario',
+                title: 'Usuário',
                 icon: 'person-add',
                 url: '/usuarios',
             },
@@ -150,17 +153,68 @@ let MenuPage = class MenuPage {
                 icon: 'business',
                 url: '/empresas',
             },
+            {
+                title: 'Segurança',
+                icon: 'key-outline',
+                url: '/perfil-usuario',
+            },
+            {
+                title: 'relatórios ',
+                icon: 'newspaper-outline',
+                url: '/selecao-relatorio',
+            }
         ];
     }
     ngOnInit() {
-        if (this.us.usu != "admin") {
-            this.usuario.login = this.as.token.usuario.login;
+        try {
+            if (this.as.token.nome !== "admin") {
+                this.usuario.login = this.as.token.usuario.login;
+            }
+            else {
+                this.usuario.login = "Administrador";
+            }
+            if (this.as.token.empresa !== null && this.as.token.empresa !== undefined) {
+                this.es.getImagem(this.as.token.empresa.id).subscribe(data => {
+                    try {
+                        this.as.token.empresa.logo = data.logo;
+                    }
+                    catch (erro) {
+                    }
+                });
+            }
+            if (this.as.token.usuario !== null && this.as.token.usuario !== undefined) {
+                this.us.getImagem(this.as.token.usuario.id).subscribe(data => {
+                    try {
+                        this.as.token.usuario.pessoa.foto = data.pessoa.foto;
+                    }
+                    catch (erro) {
+                    }
+                });
+            }
+            //   this.router.navigate(['home']);
         }
-        else {
-            this.usuario.login = "Administrador";
+        catch (error) {
         }
     }
     navegar() {
+    }
+    getImagemPerfil() {
+        try {
+            if (this.as.token != null &&
+                this.as.token.usuario != null &&
+                this.as.token.usuario.pessoa.foto != null) {
+                return "data:image/jpeg;base64," + this.as.token.usuario.pessoa.foto;
+            }
+            else {
+                return "/assets/img/boy-512.png";
+            }
+        }
+        catch (error) {
+            return "/assets/img/boy-512.png";
+        }
+    }
+    alteraSenha() {
+        this.base.atualizarSenha(this.as.token.usuario);
     }
     logout() {
         this.as.logout();
@@ -171,7 +225,8 @@ MenuPage.ctorParameters = () => [
     { type: _service_sigobra_usuario_service__WEBPACK_IMPORTED_MODULE_3__["UsuarioService"] },
     { type: _model_base__WEBPACK_IMPORTED_MODULE_5__["Base"] },
     { type: _service_autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_6__["AutentificacaoService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
+    { type: _service_sigobra_empresa_service__WEBPACK_IMPORTED_MODULE_7__["EmpresaService"] }
 ];
 MenuPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
@@ -179,7 +234,9 @@ MenuPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./menu.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/menu/menu.page.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./menu.page.scss */ "./src/app/menu/menu.page.scss")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_sigobra_usuario_service__WEBPACK_IMPORTED_MODULE_3__["UsuarioService"], _model_base__WEBPACK_IMPORTED_MODULE_5__["Base"], _service_autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_6__["AutentificacaoService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_sigobra_usuario_service__WEBPACK_IMPORTED_MODULE_3__["UsuarioService"], _model_base__WEBPACK_IMPORTED_MODULE_5__["Base"],
+        _service_autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_6__["AutentificacaoService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
+        _service_sigobra_empresa_service__WEBPACK_IMPORTED_MODULE_7__["EmpresaService"]])
 ], MenuPage);
 
 
@@ -216,67 +273,89 @@ const routes = [
             },
             {
                 path: "home",
-                loadChildren: () => Promise.all(/*! import() | home-home-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("common"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null, /*! ../home/home.module */ "./src/app/home/home.module.ts")).then(m => m.HomePageModule)
+                loadChildren: () => __webpack_require__.e(/*! import() | home-home-module */ "home-home-module").then(__webpack_require__.bind(null, /*! ../home/home.module */ "./src/app/home/home.module.ts")).then(m => m.HomePageModule)
+            },
+            { path: 'login', loadChildren: () => Promise.all(/*! import() | login-login-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("common"), __webpack_require__.e("login-login-module")]).then(__webpack_require__.bind(null, /*! ../login/login.module */ "./src/app/login/login.module.ts")).then(m => m.LoginPageModule) },
+            {
+                path: "menu/home",
+                redirectTo: "home",
+                pathMatch: "full"
             },
             {
                 path: 'obras',
-                loadChildren: () => Promise.all(/*! import() | pages-obra-obras-obras-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("common"), __webpack_require__.e("pages-obra-obras-obras-module")]).then(__webpack_require__.bind(null, /*! ./../pages/obra/obras/obras.module */ "./src/app/pages/obra/obras/obras.module.ts")).then(m => m.ObrasPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-obra-obras-obras-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("common"), __webpack_require__.e("pages-obra-obras-obras-module")]).then(__webpack_require__.bind(null, /*! ./../pages/obra/obras/obras.module */ "./src/app/pages/obra/obras/obras.module.ts")).then(m => m.ObrasPageModule)
             },
             {
                 path: 'obra-inserir',
-                loadChildren: () => Promise.all(/*! import() | pages-obra-obra-inserir-obra-inserir-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("default~pages-empresa-empresa-inserir-empresa-inserir-module~pages-inspecao-inspecao-inserir-inspeca~c4ccfdb3"), __webpack_require__.e("common"), __webpack_require__.e("pages-obra-obra-inserir-obra-inserir-module")]).then(__webpack_require__.bind(null, /*! ./../pages/obra/obra-inserir/obra-inserir.module */ "./src/app/pages/obra/obra-inserir/obra-inserir.module.ts")).then(m => m.ObraInserirPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-obra-obra-inserir-obra-inserir-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("default~pages-dashboard-tarefas-tarefas-module~pages-empresa-empresa-inserir-empresa-inserir-module~~da94fea3"), __webpack_require__.e("common"), __webpack_require__.e("pages-obra-obra-inserir-obra-inserir-module")]).then(__webpack_require__.bind(null, /*! ./../pages/obra/obra-inserir/obra-inserir.module */ "./src/app/pages/obra/obra-inserir/obra-inserir.module.ts")).then(m => m.ObraInserirPageModule)
             },
             {
                 path: 'empresas',
-                loadChildren: () => Promise.all(/*! import() | pages-empresa-empresas-empresas-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("common"), __webpack_require__.e("pages-empresa-empresas-empresas-module")]).then(__webpack_require__.bind(null, /*! ./../pages/empresa/empresas/empresas.module */ "./src/app/pages/empresa/empresas/empresas.module.ts")).then(m => m.EmpresasPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-empresa-empresas-empresas-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("common"), __webpack_require__.e("pages-empresa-empresas-empresas-module")]).then(__webpack_require__.bind(null, /*! ./../pages/empresa/empresas/empresas.module */ "./src/app/pages/empresa/empresas/empresas.module.ts")).then(m => m.EmpresasPageModule)
             },
             {
                 path: 'empresa-inserir',
-                loadChildren: () => Promise.all(/*! import() | pages-empresa-empresa-inserir-empresa-inserir-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("default~pages-empresa-empresa-inserir-empresa-inserir-module~pages-inspecao-inspecao-inserir-inspeca~c4ccfdb3"), __webpack_require__.e("common"), __webpack_require__.e("pages-empresa-empresa-inserir-empresa-inserir-module")]).then(__webpack_require__.bind(null, /*! ./../pages/empresa/empresa-inserir/empresa-inserir.module */ "./src/app/pages/empresa/empresa-inserir/empresa-inserir.module.ts")).then(m => m.EmpresaInserirPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-empresa-empresa-inserir-empresa-inserir-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("default~pages-dashboard-tarefas-tarefas-module~pages-empresa-empresa-inserir-empresa-inserir-module~~da94fea3"), __webpack_require__.e("common"), __webpack_require__.e("pages-empresa-empresa-inserir-empresa-inserir-module")]).then(__webpack_require__.bind(null, /*! ./../pages/empresa/empresa-inserir/empresa-inserir.module */ "./src/app/pages/empresa/empresa-inserir/empresa-inserir.module.ts")).then(m => m.EmpresaInserirPageModule)
             },
             {
                 path: 'usuarios',
-                loadChildren: () => Promise.all(/*! import() | pages-usuario-usuarios-usuarios-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("common"), __webpack_require__.e("pages-usuario-usuarios-usuarios-module")]).then(__webpack_require__.bind(null, /*! ./../pages/usuario/usuarios/usuarios.module */ "./src/app/pages/usuario/usuarios/usuarios.module.ts")).then(m => m.UsuariosPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-usuario-usuarios-usuarios-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("pages-usuario-usuarios-usuarios-module")]).then(__webpack_require__.bind(null, /*! ./../pages/usuario/usuarios/usuarios.module */ "./src/app/pages/usuario/usuarios/usuarios.module.ts")).then(m => m.UsuariosPageModule)
             },
             {
                 path: 'usuario-inserir',
-                loadChildren: () => Promise.all(/*! import() | pages-usuario-usuario-inserir-usuario-inserir-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("default~pages-empresa-empresa-inserir-empresa-inserir-module~pages-inspecao-inspecao-inserir-inspeca~c4ccfdb3"), __webpack_require__.e("common"), __webpack_require__.e("pages-usuario-usuario-inserir-usuario-inserir-module")]).then(__webpack_require__.bind(null, /*! ./../pages/usuario/usuario-inserir/usuario-inserir.module */ "./src/app/pages/usuario/usuario-inserir/usuario-inserir.module.ts")).then(m => m.UsuarioInserirPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-usuario-usuario-inserir-usuario-inserir-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("default~pages-dashboard-tarefas-tarefas-module~pages-empresa-empresa-inserir-empresa-inserir-module~~da94fea3"), __webpack_require__.e("common"), __webpack_require__.e("pages-usuario-usuario-inserir-usuario-inserir-module")]).then(__webpack_require__.bind(null, /*! ./../pages/usuario/usuario-inserir/usuario-inserir.module */ "./src/app/pages/usuario/usuario-inserir/usuario-inserir.module.ts")).then(m => m.UsuarioInserirPageModule)
             },
             {
                 path: 'tipoinspecoes',
-                loadChildren: () => Promise.all(/*! import() | pages-tipoinspecao-tipoinspecoes-tipoinspecoes-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("common"), __webpack_require__.e("pages-tipoinspecao-tipoinspecoes-tipoinspecoes-module")]).then(__webpack_require__.bind(null, /*! ./../pages/tipoinspecao/tipoinspecoes/tipoinspecoes.module */ "./src/app/pages/tipoinspecao/tipoinspecoes/tipoinspecoes.module.ts")).then(m => m.TipoinspecoesPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-tipoinspecao-tipoinspecoes-tipoinspecoes-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("common"), __webpack_require__.e("pages-tipoinspecao-tipoinspecoes-tipoinspecoes-module")]).then(__webpack_require__.bind(null, /*! ./../pages/tipoinspecao/tipoinspecoes/tipoinspecoes.module */ "./src/app/pages/tipoinspecao/tipoinspecoes/tipoinspecoes.module.ts")).then(m => m.TipoinspecoesPageModule)
             },
             {
                 path: 'tipoinspecao-inserir',
-                loadChildren: () => Promise.all(/*! import() | pages-tipoinspecao-tipoinspecao-inserir-tipoinspecao-inserir-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("common"), __webpack_require__.e("pages-tipoinspecao-tipoinspecao-inserir-tipoinspecao-inserir-module")]).then(__webpack_require__.bind(null, /*! ./../pages/tipoinspecao/tipoinspecao-inserir/tipoinspecao-inserir.module */ "./src/app/pages/tipoinspecao/tipoinspecao-inserir/tipoinspecao-inserir.module.ts")).then(m => m.TipoinspecaoInserirPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-tipoinspecao-tipoinspecao-inserir-tipoinspecao-inserir-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("common"), __webpack_require__.e("pages-tipoinspecao-tipoinspecao-inserir-tipoinspecao-inserir-module")]).then(__webpack_require__.bind(null, /*! ./../pages/tipoinspecao/tipoinspecao-inserir/tipoinspecao-inserir.module */ "./src/app/pages/tipoinspecao/tipoinspecao-inserir/tipoinspecao-inserir.module.ts")).then(m => m.TipoinspecaoInserirPageModule)
             },
             {
                 path: 'itenstipoinspecao',
-                loadChildren: () => Promise.all(/*! import() | pages-tipoinspecao-itenstipoinspecao-itenstipoinspecao-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("common"), __webpack_require__.e("pages-tipoinspecao-itenstipoinspecao-itenstipoinspecao-module")]).then(__webpack_require__.bind(null, /*! ./../pages/tipoinspecao/itenstipoinspecao/itenstipoinspecao.module */ "./src/app/pages/tipoinspecao/itenstipoinspecao/itenstipoinspecao.module.ts")).then(m => m.ItenstipoinspecaoPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-tipoinspecao-itenstipoinspecao-itenstipoinspecao-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("pages-tipoinspecao-itenstipoinspecao-itenstipoinspecao-module")]).then(__webpack_require__.bind(null, /*! ./../pages/tipoinspecao/itenstipoinspecao/itenstipoinspecao.module */ "./src/app/pages/tipoinspecao/itenstipoinspecao/itenstipoinspecao.module.ts")).then(m => m.ItenstipoinspecaoPageModule)
             },
             {
                 path: 'statusitensinspecoes',
-                loadChildren: () => Promise.all(/*! import() | pages-statusitensinspecao-statusitensinspecoes-statusitensinspecoes-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("common"), __webpack_require__.e("pages-statusitensinspecao-statusitensinspecoes-statusitensinspecoes-module")]).then(__webpack_require__.bind(null, /*! ./../pages/statusitensinspecao/statusitensinspecoes/statusitensinspecoes.module */ "./src/app/pages/statusitensinspecao/statusitensinspecoes/statusitensinspecoes.module.ts")).then(m => m.StatusitensinspecoesPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-statusitensinspecao-statusitensinspecoes-statusitensinspecoes-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("common"), __webpack_require__.e("pages-statusitensinspecao-statusitensinspecoes-statusitensinspecoes-module")]).then(__webpack_require__.bind(null, /*! ./../pages/statusitensinspecao/statusitensinspecoes/statusitensinspecoes.module */ "./src/app/pages/statusitensinspecao/statusitensinspecoes/statusitensinspecoes.module.ts")).then(m => m.StatusitensinspecoesPageModule)
             },
             {
                 path: 'statusitensinspecao-inserir',
-                loadChildren: () => Promise.all(/*! import() | pages-statusitensinspecao-statusitensinspecao-inserir-statusitensinspecao-inserir-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("default~pages-empresa-empresa-inserir-empresa-inserir-module~pages-inspecao-inspecao-inserir-inspeca~c4ccfdb3"), __webpack_require__.e("common"), __webpack_require__.e("pages-statusitensinspecao-statusitensinspecao-inserir-statusitensinspecao-inserir-module")]).then(__webpack_require__.bind(null, /*! ./../pages/statusitensinspecao/statusitensinspecao-inserir/statusitensinspecao-inserir.module */ "./src/app/pages/statusitensinspecao/statusitensinspecao-inserir/statusitensinspecao-inserir.module.ts")).then(m => m.StatusitensinspecaoInserirPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-statusitensinspecao-statusitensinspecao-inserir-statusitensinspecao-inserir-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("default~pages-dashboard-tarefas-tarefas-module~pages-empresa-empresa-inserir-empresa-inserir-module~~da94fea3"), __webpack_require__.e("common"), __webpack_require__.e("pages-statusitensinspecao-statusitensinspecao-inserir-statusitensinspecao-inserir-module")]).then(__webpack_require__.bind(null, /*! ./../pages/statusitensinspecao/statusitensinspecao-inserir/statusitensinspecao-inserir.module */ "./src/app/pages/statusitensinspecao/statusitensinspecao-inserir/statusitensinspecao-inserir.module.ts")).then(m => m.StatusitensinspecaoInserirPageModule)
             },
             {
                 path: 'inspecoes',
-                loadChildren: () => Promise.all(/*! import() | pages-inspecao-inspecoes-inspecoes-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("common"), __webpack_require__.e("pages-inspecao-inspecoes-inspecoes-module")]).then(__webpack_require__.bind(null, /*! ./../pages/inspecao/inspecoes/inspecoes.module */ "./src/app/pages/inspecao/inspecoes/inspecoes.module.ts")).then(m => m.InspecoesPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-inspecao-inspecoes-inspecoes-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("common"), __webpack_require__.e("pages-inspecao-inspecoes-inspecoes-module")]).then(__webpack_require__.bind(null, /*! ./../pages/inspecao/inspecoes/inspecoes.module */ "./src/app/pages/inspecao/inspecoes/inspecoes.module.ts")).then(m => m.InspecoesPageModule)
             },
             {
                 path: 'inspecao-inserir',
-                loadChildren: () => Promise.all(/*! import() | pages-inspecao-inspecao-inserir-inspecao-inserir-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("default~pages-empresa-empresa-inserir-empresa-inserir-module~pages-inspecao-inspecao-inserir-inspeca~c4ccfdb3"), __webpack_require__.e("common"), __webpack_require__.e("pages-inspecao-inspecao-inserir-inspecao-inserir-module")]).then(__webpack_require__.bind(null, /*! ./../pages/inspecao/inspecao-inserir/inspecao-inserir.module */ "./src/app/pages/inspecao/inspecao-inserir/inspecao-inserir.module.ts")).then(m => m.InspecaoInserirPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-inspecao-inspecao-inserir-inspecao-inserir-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("default~pages-dashboard-tarefas-tarefas-module~pages-empresa-empresa-inserir-empresa-inserir-module~~da94fea3"), __webpack_require__.e("common"), __webpack_require__.e("pages-inspecao-inspecao-inserir-inspecao-inserir-module")]).then(__webpack_require__.bind(null, /*! ./../pages/inspecao/inspecao-inserir/inspecao-inserir.module */ "./src/app/pages/inspecao/inspecao-inserir/inspecao-inserir.module.ts")).then(m => m.InspecaoInserirPageModule)
             },
             {
                 path: 'inspecao-realizar',
-                loadChildren: () => Promise.all(/*! import() | pages-inspecao-inspecao-realizar-inspecao-realizar-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("common"), __webpack_require__.e("pages-inspecao-inspecao-realizar-inspecao-realizar-module")]).then(__webpack_require__.bind(null, /*! ./../pages/inspecao/inspecao-realizar/inspecao-realizar.module */ "./src/app/pages/inspecao/inspecao-realizar/inspecao-realizar.module.ts")).then(m => m.InspecaoRealizarPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-inspecao-inspecao-realizar-inspecao-realizar-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("default~pages-dashboard-tarefas-tarefas-module~pages-inspecao-inspecao-realizar-inspecao-realizar-module"), __webpack_require__.e("common"), __webpack_require__.e("pages-inspecao-inspecao-realizar-inspecao-realizar-module")]).then(__webpack_require__.bind(null, /*! ./../pages/inspecao/inspecao-realizar/inspecao-realizar.module */ "./src/app/pages/inspecao/inspecao-realizar/inspecao-realizar.module.ts")).then(m => m.InspecaoRealizarPageModule)
             },
             {
                 path: 'tarefas',
-                loadChildren: () => Promise.all(/*! import() | pages-dashboard-tarefas-tarefas-module */[__webpack_require__.e("default~home-home-module~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~~66912b3f"), __webpack_require__.e("common"), __webpack_require__.e("pages-dashboard-tarefas-tarefas-module")]).then(__webpack_require__.bind(null, /*! ./../pages/dashboard/tarefas/tarefas.module */ "./src/app/pages/dashboard/tarefas/tarefas.module.ts")).then(m => m.TarefasPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-dashboard-tarefas-tarefas-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("default~pages-dashboard-tarefas-tarefas-module~pages-empresa-empresa-inserir-empresa-inserir-module~~da94fea3"), __webpack_require__.e("default~pages-dashboard-tarefas-tarefas-module~pages-inspecao-inspecao-realizar-inspecao-realizar-module"), __webpack_require__.e("common"), __webpack_require__.e("pages-dashboard-tarefas-tarefas-module")]).then(__webpack_require__.bind(null, /*! ./../pages/dashboard/tarefas/tarefas.module */ "./src/app/pages/dashboard/tarefas/tarefas.module.ts")).then(m => m.TarefasPageModule)
+            },
+            {
+                path: 'perfil-usuario',
+                loadChildren: () => Promise.all(/*! import() | pages-permissoes-perfil-usuario-perfil-usuario-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("common"), __webpack_require__.e("pages-permissoes-perfil-usuario-perfil-usuario-module")]).then(__webpack_require__.bind(null, /*! ./../pages/permissoes/perfil-usuario/perfil-usuario.module */ "./src/app/pages/permissoes/perfil-usuario/perfil-usuario.module.ts")).then(m => m.PerfilUsuarioPageModule)
+            },
+            {
+                path: 'perfil-usuario-inserir',
+                loadChildren: () => Promise.all(/*! import() | pages-permissoes-perfil-usuario-inserir-perfil-usuario-inserir-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("common"), __webpack_require__.e("pages-permissoes-perfil-usuario-inserir-perfil-usuario-inserir-module")]).then(__webpack_require__.bind(null, /*! ./../pages/permissoes/perfil-usuario-inserir/perfil-usuario-inserir.module */ "./src/app/pages/permissoes/perfil-usuario-inserir/perfil-usuario-inserir.module.ts")).then(m => m.PerfilUsuarioInserirPageModule)
+            },
+            {
+                path: 'permissao-usuario',
+                loadChildren: () => Promise.all(/*! import() | pages-permissoes-permissao-usuario-permissao-usuario-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("common"), __webpack_require__.e("pages-permissoes-permissao-usuario-permissao-usuario-module")]).then(__webpack_require__.bind(null, /*! ./../pages/permissoes/permissao-usuario/permissao-usuario.module */ "./src/app/pages/permissoes/permissao-usuario/permissao-usuario.module.ts")).then(m => m.PermissaoUsuarioPageModule)
+            },
+            {
+                path: 'selecao-relatorio',
+                loadChildren: () => Promise.all(/*! import() | pages-relatorios-selecao-relatorio-selecao-relatorio-module */[__webpack_require__.e("default~login-login-module~menu-menu-module~pages-dashboard-tarefas-tarefas-module~pages-empresa-emp~9c81ffdb"), __webpack_require__.e("default~pages-dashboard-tarefas-tarefas-module~pages-empresa-empresa-inserir-empresa-inserir-module~~da94fea3"), __webpack_require__.e("common"), __webpack_require__.e("pages-relatorios-selecao-relatorio-selecao-relatorio-module")]).then(__webpack_require__.bind(null, /*! ./../pages/relatorios/selecao-relatorio/selecao-relatorio.module */ "./src/app/pages/relatorios/selecao-relatorio/selecao-relatorio.module.ts")).then(m => m.SelecaoRelatorioPageModule)
             }
         ]
     }

@@ -293,24 +293,70 @@ const openURL = async (url, ev, direction) => {
 
 /***/ }),
 
-/***/ "./src/app/model/enums/tipo-status.enum.ts":
-/*!*************************************************!*\
-  !*** ./src/app/model/enums/tipo-status.enum.ts ***!
-  \*************************************************/
-/*! exports provided: TipoStatus */
+/***/ "./src/app/model/enums/estado.enum.ts":
+/*!********************************************!*\
+  !*** ./src/app/model/enums/estado.enum.ts ***!
+  \********************************************/
+/*! exports provided: Estado */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TipoStatus", function() { return TipoStatus; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Estado", function() { return Estado; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
-var TipoStatus;
-(function (TipoStatus) {
-    TipoStatus[TipoStatus["aberto"] = 0] = "aberto";
-    TipoStatus[TipoStatus["finalizado"] = 1] = "finalizado";
-    TipoStatus[TipoStatus["reprovado"] = 2] = "reprovado";
-})(TipoStatus || (TipoStatus = {}));
+var Estado;
+(function (Estado) {
+    Estado["AC"] = "Acre";
+    Estado["AL"] = "Alagoas";
+    Estado["AP"] = "Amap\u00E1";
+    Estado["AM"] = "Amazonas";
+    Estado["BA"] = "Bahia";
+    Estado["CE"] = "Cear\u00E1";
+    Estado["DF"] = "Distrito Federal";
+    Estado["ES"] = "Esp\u00EDrito Santo";
+    Estado["GO"] = "Goi\u00E1s";
+    Estado["MA"] = "Maranh\u00E3o";
+    Estado["MT"] = "Mato Grosso";
+    Estado["MS"] = "Mato Grosso do Sul";
+    Estado["MG"] = "Minas Gerais";
+    Estado["PA"] = "Par\u00E1";
+    Estado["PB"] = "Para\u00EDba";
+    Estado["PR"] = "Paran\u00E1";
+    Estado["PE"] = "Pernambuco";
+    Estado["PI"] = "Piau\u00ED";
+    Estado["RJ"] = "Rio de Janeiro";
+    Estado["RN"] = "Rio Grande do Norte";
+    Estado["RS"] = "Rio Grande do Sul";
+    Estado["RO"] = "Rond\u00F4nia";
+    Estado["RR"] = "Roraima";
+    Estado["SC"] = "Santa Catarina";
+    Estado["SP"] = "S\u00E3o Paulo";
+    Estado["SE"] = "Sergipe";
+    Estado["TO"] = "Tocantins";
+})(Estado || (Estado = {}));
+
+
+/***/ }),
+
+/***/ "./src/app/model/enums/join-type.enum.ts":
+/*!***********************************************!*\
+  !*** ./src/app/model/enums/join-type.enum.ts ***!
+  \***********************************************/
+/*! exports provided: JoinType */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JoinType", function() { return JoinType; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var JoinType;
+(function (JoinType) {
+    JoinType[JoinType["INNER"] = 0] = "INNER";
+    JoinType[JoinType["LEFT"] = 1] = "LEFT";
+    JoinType[JoinType["RIGHT"] = 2] = "RIGHT";
+})(JoinType || (JoinType = {}));
 
 
 /***/ }),
@@ -328,6 +374,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class Empresa {
+}
+
+
+/***/ }),
+
+/***/ "./src/app/model/objetc/filtro/filtro.ts":
+/*!***********************************************!*\
+  !*** ./src/app/model/objetc/filtro/filtro.ts ***!
+  \***********************************************/
+/*! exports provided: Filtro */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Filtro", function() { return Filtro; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class Filtro {
+    constructor() {
+        this.nativo = false;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/model/objetc/filtro/pesquisa.ts":
+/*!*************************************************!*\
+  !*** ./src/app/model/objetc/filtro/pesquisa.ts ***!
+  \*************************************************/
+/*! exports provided: Pesquisa */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Pesquisa", function() { return Pesquisa; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class Pesquisa {
 }
 
 
@@ -390,24 +475,6 @@ class StatusItemInspecao {
 
 /***/ }),
 
-/***/ "./src/app/model/objetc/tipo-status-oj.ts":
-/*!************************************************!*\
-  !*** ./src/app/model/objetc/tipo-status-oj.ts ***!
-  \************************************************/
-/*! exports provided: TipoStatusOJ */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TipoStatusOJ", function() { return TipoStatusOJ; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-
-class TipoStatusOJ {
-}
-
-
-/***/ }),
-
 /***/ "./src/app/model/objetc/tipoinspecao.ts":
 /*!**********************************************!*\
   !*** ./src/app/model/objetc/tipoinspecao.ts ***!
@@ -421,24 +488,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class TipoInspecao {
-}
-
-
-/***/ }),
-
-/***/ "./src/app/model/objetc/usuario.ts":
-/*!*****************************************!*\
-  !*** ./src/app/model/objetc/usuario.ts ***!
-  \*****************************************/
-/*! exports provided: Usuario */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Usuario", function() { return Usuario; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-
-class Usuario {
 }
 
 
@@ -492,6 +541,12 @@ let EmpresaService = class EmpresaService {
     pesqemp(id) {
         return this.http.post(this.as.url + this.url + '/pesqemp', id, this.as.getOptions());
     }
+    pesquisa(value) {
+        return this.http.post(this.as.url + this.url + '/pesquisa', value, this.as.getOptions());
+    }
+    getImagem(id) {
+        return this.http.get(this.as.url + this.url + '/imagemempresa/' + id.toString(), this.as.getOptions());
+    }
 };
 EmpresaService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
@@ -508,16 +563,16 @@ EmpresaService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/service/sigobra/inspecao.service.ts":
-/*!*****************************************************!*\
-  !*** ./src/app/service/sigobra/inspecao.service.ts ***!
-  \*****************************************************/
-/*! exports provided: InspecaoService */
+/***/ "./src/app/service/sigobra/permissoes-acesso.service.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/service/sigobra/permissoes-acesso.service.ts ***!
+  \**************************************************************/
+/*! exports provided: PermissoesAcessoService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InspecaoService", function() { return InspecaoService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PermissoesAcessoService", function() { return PermissoesAcessoService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
@@ -526,327 +581,92 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let InspecaoService = class InspecaoService {
+let PermissoesAcessoService = class PermissoesAcessoService {
     constructor(http, as) {
         this.http = http;
         this.as = as;
-        this.url = '/inspecao';
+        this.url = '/permissao';
     }
-    salvar(inspecao) {
-        return this.http.post(this.as.url + this.url, inspecao, this.as.getOptions());
+    pesquisarPermissoes(value) {
+        return this.http.post(this.as.url + this.url + '/pesquisarpermissoes', value, this.as.getOptions());
     }
-    editar(inspecao) {
-        return this.http.put(this.as.url + this.url, inspecao, this.as.getOptions());
+    /*   COLOCAR METODOS REFERENTES A PERFIL USUARIO DESTE PONTO PARA BAIXO     */
+    pesquisarPerfilUsuario(value) {
+        return this.http.post(this.as.url + this.url + '/pesquisarperfilusuario', value, this.as.getOptions());
     }
-    delete(inspecao) {
-        return this.http.post(this.as.url + this.url + '/deletar', inspecao, this.as.getOptions());
+    pesquisarPerfilUsuario1(value) {
+        return this.http.post(this.as.url + this.url + '/pesquisarperfilusuario1', value, this.as.getOptions());
     }
-    pesquisar(value) {
-        return this.http.post(this.as.url + this.url + '/pesquisar', value, this.as.getOptions());
+    salvarPerfilUsuario(value) {
+        return this.http.post(this.as.url + this.url + '/salvarperfilusuario', value, this.as.getOptions());
     }
-    get(id) {
-        return this.http.post(this.as.url + this.url, id, this.as.getOptions());
-    }
-    edit(inspecao) {
-        return this.http.post(this.as.url + this.url + '/editar', inspecao, this.as.getOptions());
-    }
-    editarativo(inspecao) {
-        return this.http.post(this.as.url + this.url + '/editarativo', inspecao, this.as.getOptions());
-    }
-    byinspecaoitens(inspecao) {
-        return this.http.post(this.as.url + this.url + '/byinspecaoitens', inspecao, this.as.getOptions());
-    }
-    aprova(inspecaoitem) {
-        return this.http.post(this.as.url + this.url + '/aprova', inspecaoitem, this.as.getOptions());
-    }
-    reprova(inspecaoitem) {
-        return this.http.post(this.as.url + this.url + '/reprova', inspecaoitem, this.as.getOptions());
-    }
-    raprova(inspecaoitem) {
-        return this.http.post(this.as.url + this.url + '/raprova', inspecaoitem, this.as.getOptions());
-    }
-    pesqitem(value) {
-        return this.http.post(this.as.url + this.url + '/pesqitem', value, this.as.getOptions());
-    }
-    filtra(filtro) {
-        return this.http.post(this.as.url + this.url + '/filtrar', filtro, this.as.getOptions());
+    deletarPerfilUsuario(value) {
+        return this.http.post(this.as.url + this.url + '/excluirperfilusuario', value, this.as.getOptions());
     }
 };
-InspecaoService.ctorParameters = () => [
+PermissoesAcessoService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
     { type: _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"] }
 ];
-InspecaoService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+PermissoesAcessoService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"]])
-], InspecaoService);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"],
+        _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"]])
+], PermissoesAcessoService);
 
 
 
 /***/ }),
 
-/***/ "./src/app/service/sigobra/obra.service.ts":
-/*!*************************************************!*\
-  !*** ./src/app/service/sigobra/obra.service.ts ***!
-  \*************************************************/
-/*! exports provided: ObraService */
+/***/ "./src/app/service/viacep/viacep.service.ts":
+/*!**************************************************!*\
+  !*** ./src/app/service/viacep/viacep.service.ts ***!
+  \**************************************************/
+/*! exports provided: ViacepService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ObraService", function() { return ObraService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViacepService", function() { return ViacepService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../autentificacao/autentificacao.service */ "./src/app/service/autentificacao/autentificacao.service.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 
 
 
 
-let ObraService = class ObraService {
-    constructor(http, as) {
+let ViacepService = class ViacepService {
+    constructor(http) {
         this.http = http;
-        this.as = as;
-        this.url = '/obras';
     }
-    salvar(obras) {
-        return this.http.post(this.as.url + this.url, obras, this.as.getOptions());
-    }
-    editar(obras) {
-        return this.http.put(this.as.url + this.url, obras, this.as.getOptions());
-    }
-    delete(obras) {
-        return this.http.post(this.as.url + this.url + '/deletar', obras, this.as.getOptions());
-    }
-    pesquisar(value) {
-        return this.http.post(this.as.url + this.url + '/pesquisar', value, this.as.getOptions());
-    }
-    get(id) {
-        return this.http.post(this.as.url + this.url, id, this.as.getOptions());
-    }
-    edit(obras) {
-        return this.http.post(this.as.url + this.url + '/editar', obras, this.as.getOptions());
-    }
-    editarativo(obras) {
-        return this.http.post(this.as.url + this.url + '/editarativo', obras, this.as.getOptions());
-    }
-    pesquisar1(value) {
-        return this.http.post(this.as.url + this.url + '/pesquisar1', value, this.as.getOptions());
+    consultaCEP(cep) {
+        console.log(cep);
+        // Nova variável "cep" somente com dígitos.
+        cep = cep.replace(/\D/g, '');
+        // Verifica se campo cep possui valor informado.
+        if (cep !== '') {
+            // Expressão regular para validar o CEP.
+            const validacep = /^[0-9]{8}$/;
+            // Valida o formato do CEP.
+            if (validacep.test(cep)) {
+                return this.http.get(`https://viacep.com.br/ws/${cep}/json`);
+            }
+        }
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])({});
     }
 };
-ObraService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
-    { type: _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"] }
+ViacepService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-ObraService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+ViacepService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"]])
-], ObraService);
-
-
-
-/***/ }),
-
-/***/ "./src/app/service/sigobra/statusitensinspecao.service.ts":
-/*!****************************************************************!*\
-  !*** ./src/app/service/sigobra/statusitensinspecao.service.ts ***!
-  \****************************************************************/
-/*! exports provided: StatusitensinspecaoService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StatusitensinspecaoService", function() { return StatusitensinspecaoService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../autentificacao/autentificacao.service */ "./src/app/service/autentificacao/autentificacao.service.ts");
-/* harmony import */ var _model_objetc_tipo_status_oj__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../model/objetc/tipo-status-oj */ "./src/app/model/objetc/tipo-status-oj.ts");
-/* harmony import */ var src_app_model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/model/enums/tipo-status.enum */ "./src/app/model/enums/tipo-status.enum.ts");
-
-
-
-
-
-
-let StatusitensinspecaoService = class StatusitensinspecaoService {
-    constructor(http, as) {
-        this.http = http;
-        this.as = as;
-        this.url = '/statusitensinspecao';
-    }
-    salvar(status) {
-        return this.http.post(this.as.url + this.url, status, this.as.getOptions());
-    }
-    editar(status) {
-        return this.http.put(this.as.url + this.url, status, this.as.getOptions());
-    }
-    delete(status) {
-        return this.http.post(this.as.url + this.url + '/deletar', status, this.as.getOptions());
-    }
-    pesquisar(value) {
-        return this.http.post(this.as.url + this.url + '/pesquisar', value, this.as.getOptions());
-    }
-    get(id) {
-        return this.http.post(this.as.url + this.url, id, this.as.getOptions());
-    }
-    edit(status) {
-        return this.http.post(this.as.url + this.url + '/editar', status, this.as.getOptions());
-    }
-    editarativo(status) {
-        return this.http.post(this.as.url + this.url + '/editarativo', status, this.as.getOptions());
-    }
-    getListStatus() {
-        const lista = new Array();
-        let tipo = new _model_objetc_tipo_status_oj__WEBPACK_IMPORTED_MODULE_4__["TipoStatusOJ"]();
-        tipo.nome = 'Aberto';
-        tipo.tipoStatus = src_app_model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_5__["TipoStatus"].aberto;
-        lista.push(tipo);
-        tipo = new _model_objetc_tipo_status_oj__WEBPACK_IMPORTED_MODULE_4__["TipoStatusOJ"]();
-        tipo.nome = 'Finalizado';
-        tipo.tipoStatus = src_app_model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_5__["TipoStatus"].finalizado;
-        lista.push(tipo);
-        tipo = new _model_objetc_tipo_status_oj__WEBPACK_IMPORTED_MODULE_4__["TipoStatusOJ"]();
-        tipo.nome = 'Reprovado';
-        tipo.tipoStatus = src_app_model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_5__["TipoStatus"].reprovado;
-        lista.push(tipo);
-        return lista;
-    }
-};
-StatusitensinspecaoService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
-    { type: _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"] }
-];
-StatusitensinspecaoService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"]])
-], StatusitensinspecaoService);
-
-
-
-/***/ }),
-
-/***/ "./src/app/service/sigobra/tipoinspecao.service.ts":
-/*!*********************************************************!*\
-  !*** ./src/app/service/sigobra/tipoinspecao.service.ts ***!
-  \*********************************************************/
-/*! exports provided: TipoinspecaoService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TipoinspecaoService", function() { return TipoinspecaoService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../autentificacao/autentificacao.service */ "./src/app/service/autentificacao/autentificacao.service.ts");
-
-
-
-
-let TipoinspecaoService = class TipoinspecaoService {
-    constructor(http, as) {
-        this.http = http;
-        this.as = as;
-        this.url = '/tipoinspecao';
-    }
-    salvar(tipoinspecao) {
-        return this.http.post(this.as.url + this.url, tipoinspecao, this.as.getOptions());
-    }
-    editar(tipoinspecao) {
-        return this.http.put(this.as.url + this.url, tipoinspecao, this.as.getOptions());
-    }
-    delete(tipoinspecao) {
-        return this.http.post(this.as.url + this.url + '/deletar', tipoinspecao, this.as.getOptions());
-    }
-    pesquisar(value) {
-        return this.http.post(this.as.url + this.url + '/pesquisar', value, this.as.getOptions());
-    }
-    get(id) {
-        return this.http.post(this.as.url + this.url, id, this.as.getOptions());
-    }
-    edit(tipoinspecao) {
-        return this.http.post(this.as.url + this.url + '/editar', tipoinspecao, this.as.getOptions());
-    }
-    editarativo(tipoinspecao) {
-        return this.http.post(this.as.url + this.url + '/editarativo', tipoinspecao, this.as.getOptions());
-    }
-};
-TipoinspecaoService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
-    { type: _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"] }
-];
-TipoinspecaoService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"]])
-], TipoinspecaoService);
-
-
-
-/***/ }),
-
-/***/ "./src/app/service/sigobra/usuario.service.ts":
-/*!****************************************************!*\
-  !*** ./src/app/service/sigobra/usuario.service.ts ***!
-  \****************************************************/
-/*! exports provided: UsuarioService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsuarioService", function() { return UsuarioService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../autentificacao/autentificacao.service */ "./src/app/service/autentificacao/autentificacao.service.ts");
-
-
-
-
-let UsuarioService = class UsuarioService {
-    constructor(http, as) {
-        this.http = http;
-        this.as = as;
-        this.url = '/usuario';
-        this.imagem = '/imagem';
-    }
-    salvar(usuario) {
-        return this.http.post(this.as.url + this.url, usuario, this.as.getOptions());
-    }
-    getToken(usuario) {
-        return this.http.post(this.as.url + this.as.urlToken, this.as.getBodyToken(usuario.email, usuario.senha), this.as.getOptionsToken());
-    }
-    logar(usuario) {
-        return this.http.post(this.as.url + this.url + '/logar', usuario, this.as.getOptions());
-    }
-    getImagem(usuario) {
-        return this.http.post(this.as.url + this.url + this.imagem, usuario, this.as.getOptions());
-    }
-    pesquisar(value) {
-        return this.http.post(this.as.url + this.url + '/pesquisar', value, this.as.getOptions());
-    }
-    byusuario(value) {
-        return this.http.post(this.as.url + this.url + '/byusuario', value, this.as.getOptions());
-    }
-};
-UsuarioService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
-    { type: _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"] }
-];
-UsuarioService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_3__["AutentificacaoService"]])
-], UsuarioService);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+], ViacepService);
 
 
 

@@ -21,28 +21,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-content padding class=\"login auth-page\">\r\n  <ion-toolbar color=\"#04ff0c\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button color=\"secondary\"></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>\r\n      <ion-text color=\"light\">\r\n        <ion-text color=\"light\" class=\"fw700\">Inspeção de Serviço </ion-text>\r\n      </ion-text>\r\n    </ion-title>\r\n\r\n    <ion-buttons slot=\"end\">\r\n      <ion-item no-padding class=\"animated fadeInUp\">\r\n        <ion-input name=\"value\" color=\"#04ff0c\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n\r\n      <ion-button size=\"small\" shape=\"round\" color=\"dark\">\r\n        <ion-icon name=\"search\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n  <div class=\"auth-content\">\r\n    <form class=\"list-form auth-content\">\r\n      <ion-item>\r\n        <ion-label>Descrição: {{ inspecao.tipoInspecao.nome }}</ion-label>\r\n      </ion-item>\r\n      <ion-grid>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label>Obra: {{ inspecao.obras.nome }}</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label>Local: {{ inspecao.local }}</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label>Data de Abertura: {{ inspecao.dtinicio }}</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label>Data de Fechamento: {{ inspecao.dtfinalizada }}</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item color=\"secondary\">\r\n              <ion-label>Item de Inspeção</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item color=\"secondary\">\r\n              <ion-label>Método de Verificação</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item color=\"secondary\">\r\n              <ion-label>Tolerância</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item color=\"secondary\">\r\n              <ion-label>Responsável pela Inspeção</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item color=\"secondary\">\r\n              <ion-label>Status</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-item-sliding *ngFor=\"let inspecaoitem of inspecaoitens\">\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-item>\r\n                <ion-label>{{ inspecaoitem.itemtipoinspecao.nome }}</ion-label>\r\n              </ion-item>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-item>\r\n                <ion-label>{{ inspecaoitem.itemtipoinspecao.metodoverificacao }}</ion-label>\r\n              </ion-item>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-item>\r\n                <ion-label>{{ inspecaoitem.itemtipoinspecao.tolerancia }}</ion-label>\r\n              </ion-item>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-item>\r\n                <ion-label>{{ inspecaoitem.ultimoStatus?.pessoa?.nome || \"Item não inspecionado\" }}</ion-label>\r\n              </ion-item>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-item [ngStyle]=\"{'background-color': getColor(inspecaoitem)}\">\r\n                <ion-label>{{ inspecaoitem.ultimoStatus?.statusiteminspecao?.nome || \"Item não inspecionado\" }}\r\n                </ion-label>\r\n              </ion-item>\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-item>\r\n                <ion-label>Selecionar Status</ion-label>\r\n                <ionic-selectable item-content name=\"statuss\" [(items)]=\"statusItem\"\r\n                  [(ngModel)]=\"inspecaoitem.novoStatus.statusiteminspecao\" closeButtonText=\"Cancelar\"\r\n                  itemValueField=\"id\" itemTextField=\"nome\" canSearch=\"true\" [isConfirmButtonEnabled]=\"true\"\r\n                  (onSelect)=\"selecionarStatus($event)\">\r\n                </ionic-selectable>\r\n              </ion-item>\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-item>\r\n                <ion-label position=\"floating\">\r\n                  Descrição do Problema\r\n                </ion-label>\r\n                <ion-input [(ngModel)]=\"inspecaoitem.novoStatus.descricaoProblema\" name=\"descricao\" type=\"text\" color=\"light\">\r\n                </ion-input>\r\n              </ion-item>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button shape=\"round\" color=\"secondary\" icon-right tappable *ngIf=\"inicial(inspecaoitem)\"\r\n                (click)=\"inspencionar(inspecaoitem)\">\r\n                <ion-icon name=\"checkmark\"></ion-icon>\r\n                Inspecionado Aprovado\r\n              </ion-button>\r\n              <ion-button shape=\"round\" color=\"secondary\" icon-right tappable *ngIf=\"aberto(inspecaoitem)\"\r\n                (click)=\"inspencionarReprovar(inspecaoitem)\">\r\n                <ion-icon name=\"close\"></ion-icon>\r\n                Inspecionado Reprovado\r\n              </ion-button>\r\n              <ion-button shape=\"round\" color=\"secondary\" icon-right tappable *ngIf=\"reprovadoAprovado(inspecaoitem)\"\r\n                (click)=\"ReinspencionarAprovar(inspecaoitem)\">\r\n                <ion-icon name=\"checkmark-circle\"></ion-icon>\r\n                Reinspecionado Aprovado\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-item-sliding>\r\n      </ion-grid>\r\n\r\n\r\n\r\n    </form>\r\n  </div>\r\n\r\n\r\n</ion-content>";
+    __webpack_exports__["default"] = "<ion-content padding class=\"login auth-page\">\r\n  <ion-toolbar color=\"primary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button color=\"light\"></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>\r\n      <ion-text color=\"light\">\r\n        <ion-text color=\"light\" class=\"fw700\" text-wrap>Inspeção de Serviço </ion-text>\r\n      </ion-text>\r\n    </ion-title>\r\n\r\n  </ion-toolbar>\r\n  <ion-toolbar color=\"primary\">\r\n    <div padding-horizontal text-center>\r\n      <div class=\"logo\"></div>\r\n      <h3 no-margin>\r\n        <ion-text color=\"light\" class=\"fw700\">\r\n          <ion-text color=\"light\"> &nbsp;Descrição: {{ inspecao.tipoInspecao.nome }}</ion-text>\r\n        </ion-text>\r\n      </h3>\r\n    </div>\r\n  </ion-toolbar>\r\n\r\n  <div class=\"auth-content\">\r\n    <form class=\"list-form auth-content\">\r\n\r\n      <ion-grid>\r\n        <ion-row>\r\n          <ion-col size=\"12\" size-sm>\r\n            <ion-item color=\"medium\">\r\n              <ion-label>Obra: {{ inspecao.obras.nome }}</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item color=\"medium\" size=\"12\" size-sm>\r\n              <ion-label>Local: {{ inspecao.local }}</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item color=\"medium\" size=\"12\" size-sm>\r\n              <ion-label>Data de Abertura: {{ inspecao.dtinicio }}</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item color=\"medium\" size=\"12\" size-sm>\r\n              <ion-label>Data de Fechamento: {{ inspecao.dtfinalizada }}</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col class=\"tamanho-item-ispecao\" size=\"12\" size-sm>\r\n            <ion-item color=\"primary\" size=\"12\" size-sm>\r\n              <ion-label>Item de Inspeção</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col class=\"tamanho-item-ispecao\" size=\"12\" size-sm>\r\n            <ion-item color=\"primary\" size=\"12\" size-sm>\r\n              <ion-label>Método de Verificação</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col class=\"tamanho-item-ispecao\" size=\"12\" size-sm>\r\n            <ion-item color=\"primary\" size=\"12\" size-sm>\r\n              <ion-label>Tolerância</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col class=\"tamanho-item-ispecao\" size=\"12\" size-sm> \r\n            <ion-item color=\"primary\" size=\"12\" size-sm>\r\n              <ion-label>Responsável pela Inspeção</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col class=\"tamanho-item-ispecao\" size=\"12\" size-sm>\r\n            <ion-item color=\"primary\" size=\"12\" size-sm>\r\n              <ion-label>Status</ion-label>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-item-sliding *ngFor=\"let inspecaoitem of inspecaoitens\" class=\"animated fadeInUp\">\r\n          <ion-row>\r\n            <ion-col class=\"tamanho-item-ispecao\" size=\"12\" size-sm>\r\n              <ion-item>\r\n                <ion-label>{{ inspecaoitem.itemtipoinspecao.nome }}</ion-label>\r\n              </ion-item>\r\n            </ion-col>\r\n            <ion-col class=\"tamanho-item-ispecao\" size=\"12\" size-sm>\r\n              <ion-item >\r\n                <ion-label>{{ inspecaoitem.itemtipoinspecao.metodoverificacao }}</ion-label>\r\n                <ion-button shape=\"round\" color=\"primary\"(click)=\"msgExpmv(inspecaoitem)\">\r\n                    <ion-icon name=\"clipboard\" color=\"tertiary\"></ion-icon>\r\n                </ion-button>\r\n              </ion-item>\r\n            </ion-col>\r\n            <ion-col class=\"tamanho-item-ispecao\" size=\"12\" size-sm>\r\n              <ion-item>\r\n                <ion-label>{{ inspecaoitem.itemtipoinspecao.tolerancia }}</ion-label>\r\n              </ion-item>\r\n            </ion-col>\r\n            <ion-col class=\"tamanho-item-ispecao\" size=\"12\" size-sm>\r\n              <ion-item>\r\n                <ion-label>{{ inspecaoitem.statusInspecao?.pessoa?.nome || \"Item não inspecionado\" }}</ion-label>\r\n              </ion-item>\r\n            </ion-col>\r\n            <ion-col v size=\"12\" size-sm>\r\n              <ion-item [ngStyle]=\"{'background-color': getColor(inspecaoitem)}\">\r\n                <ion-label>{{ inspecaoitem.statusInspecao?.statusiteminspecao?.nome || \"Item não inspecionado\" }}\r\n                </ion-label>\r\n              </ion-item>\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col size=\"12\" size-sm>\r\n              <ion-item>\r\n                <ion-label position=\"floating\">\r\n                  Descrição do Problema\r\n                </ion-label>\r\n                <ion-input *ngIf=\"reprovadoAprovado(inspecaoitem)\"\r\n                  [(ngModel)]=\"inspecaoitem.statusInspecao.descricaoProblema\" name=\"descricao\" type=\"text\">\r\n                </ion-input>\r\n                <div>\r\n                  <ion-button shape=\"round\" color=\"primary\" icon-right tappable *ngIf=\"reprovadoAprovado(inspecaoitem)\"\r\n                    (click)=\"inspencionarReprovar(inspecaoitem)\">\r\n                    <ion-icon name=\"checkmark-circle\" color=\"warning\"></ion-icon>\r\n                    Salvar Descrição\r\n                  </ion-button>\r\n                  <ion-button shape=\"round\" color=\"primary\"\r\n                    *ngIf=\"reprovadoAprovado(inspecaoitem) && temMsg(inspecaoitem)\"\r\n                    (click)=\"msgExpandida(inspecaoitem)\">\r\n                    <ion-icon name=\"clipboard\" color=\"tertiary\"></ion-icon>\r\n                  </ion-button>\r\n                </div>               \r\n              </ion-item>\r\n            </ion-col>\r\n            <ion-col size=\"12\" size-sm>\r\n              <ion-button shape=\"round\" color=\"primary\" icon-right tappable *ngIf=\"inicial(inspecaoitem)\"\r\n                (click)=\"inspencionar(inspecaoitem)\">\r\n                <ion-icon name=\"checkmark\" color=\"success\"></ion-icon>\r\n                Inspecionado Aprovado\r\n              </ion-button>\r\n              <ion-button shape=\"round\" color=\"primary\" icon-right tappable *ngIf=\"aberto(inspecaoitem)\"\r\n                (click)=\"inspencionarReprovar(inspecaoitem)\">\r\n                <ion-icon name=\"close\" color=\"danger\"></ion-icon>\r\n                Inspecionado Reprovado\r\n              </ion-button>\r\n              <br *ngIf=\" inicial(inspecaoitem) && aberto(inspecaoitem)\">\r\n              <ion-button shape=\"round\" color=\"primary\" icon-right tappable *ngIf=\"reprovadoAprovado(inspecaoitem)\"\r\n                (click)=\"ReinspencionarAprovar(inspecaoitem)\">\r\n                <ion-icon name=\"checkmark-circle\" color=\"warning\"></ion-icon>\r\n                Reinspecionado Aprovado\r\n              </ion-button>\r\n              <ion-button shape=\"round\" color=\"primary\" icon-right tappable *ngIf=\"inspecionado(inspecaoitem)\"\r\n                (click)=\"reabrir(inspecaoitem)\">\r\n                <ion-icon name=\"checkmark-circle\" color=\"warning\"></ion-icon>\r\n                Reabrir\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-item-divider>\r\n          </ion-item-divider>\r\n        </ion-item-sliding>\r\n      </ion-grid>\r\n\r\n    </form>\r\n  </div>\r\n\r\n\r\n</ion-content>";
     /***/
   },
 
   /***/
-  "./src/app/model/enums/status-item.enum.ts":
+  "./src/app/model/enums/tipo-status.enum.ts":
   /*!*************************************************!*\
-    !*** ./src/app/model/enums/status-item.enum.ts ***!
+    !*** ./src/app/model/enums/tipo-status.enum.ts ***!
     \*************************************************/
 
-  /*! exports provided: StatusItem */
+  /*! exports provided: TipoStatus */
 
   /***/
-  function srcAppModelEnumsStatusItemEnumTs(module, __webpack_exports__, __webpack_require__) {
+  function srcAppModelEnumsTipoStatusEnumTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "StatusItem", function () {
-      return StatusItem;
+    __webpack_require__.d(__webpack_exports__, "TipoStatus", function () {
+      return TipoStatus;
     });
     /* harmony import */
 
@@ -51,14 +51,55 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var StatusItem;
+    var TipoStatus;
 
-    (function (StatusItem) {
-      StatusItem[StatusItem["aberto"] = 0] = "aberto";
-      StatusItem[StatusItem["inspecionado"] = 1] = "inspecionado";
-      StatusItem[StatusItem["inspecionadoReprovado"] = 2] = "inspecionadoReprovado";
-      StatusItem[StatusItem["reinspencionadoAprovado"] = 3] = "reinspencionadoAprovado";
-    })(StatusItem || (StatusItem = {}));
+    (function (TipoStatus) {
+      TipoStatus[TipoStatus["aberto"] = 0] = "aberto";
+      TipoStatus[TipoStatus["inspecionadaAprovado"] = 1] = "inspecionadaAprovado";
+      TipoStatus[TipoStatus["inspecionadaReprovado"] = 2] = "inspecionadaReprovado";
+      TipoStatus[TipoStatus["reinspecionadaAprovado"] = 3] = "reinspecionadaAprovado";
+    })(TipoStatus || (TipoStatus = {}));
+    /***/
+
+  },
+
+  /***/
+  "./src/app/model/objetc/status-item-inspecionado.ts":
+  /*!**********************************************************!*\
+    !*** ./src/app/model/objetc/status-item-inspecionado.ts ***!
+    \**********************************************************/
+
+  /*! exports provided: StatusItemInspecionado */
+
+  /***/
+  function srcAppModelObjetcStatusItemInspecionadoTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "StatusItemInspecionado", function () {
+      return StatusItemInspecionado;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _statusiteminspecao__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./statusiteminspecao */
+    "./src/app/model/objetc/statusiteminspecao.ts");
+
+    var StatusItemInspecionado = function StatusItemInspecionado() {
+      _classCallCheck(this, StatusItemInspecionado);
+
+      this.statusiteminspecao = new _statusiteminspecao__WEBPACK_IMPORTED_MODULE_1__["StatusItemInspecao"]();
+    };
     /***/
 
   },
@@ -218,7 +259,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".welcome-card ion-img {\n  max-height: 35vh;\n  overflow: hidden;\n}\n\n:host ion-content {\n  --background: linear-gradient(\n    135deg,\n    var(--ion-color-primary),\n    #ffffff\n  );\n}\n\n:host ion-item {\n  border-radius: 0;\n  border-bottom: 1px dotted var(--ion-color-medium);\n}\n\n:host ion-card.no-radius {\n  border-radius: 0;\n}\n\n.botao-cor {\n  color: black;\n}\n\nion-col {\n  border: 1px solid #120a8f;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvaW5zcGVjYW8vaW5zcGVjYW8tcmVhbGl6YXIvQzpcXFVzZXJzXFxyb2JlclxcT25lRHJpdmVcXGlvbmljXFxzaWdvYnJhLXVpL3NyY1xcYXBwXFxwYWdlc1xcaW5zcGVjYW9cXGluc3BlY2FvLXJlYWxpemFyXFxpbnNwZWNhby1yZWFsaXphci5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2luc3BlY2FvL2luc3BlY2FvLXJlYWxpemFyL2luc3BlY2FvLXJlYWxpemFyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGdCQUFBO0VBQ0EsZ0JBQUE7QUNDSjs7QURHSTtFQUNFOzs7O0dBQUE7QUNJTjs7QURHSTtFQUNFLGdCQUFBO0VBQ0EsaURBQUE7QUNETjs7QURLTTtFQUNFLGdCQUFBO0FDSFI7O0FEUUU7RUFDRSxZQUFBO0FDTEo7O0FEUUU7RUFDRSx5QkFBQTtBQ0xKIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvaW5zcGVjYW8vaW5zcGVjYW8tcmVhbGl6YXIvaW5zcGVjYW8tcmVhbGl6YXIucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLndlbGNvbWUtY2FyZCBpb24taW1nIHtcclxuICAgIG1heC1oZWlnaHQ6IDM1dmg7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gIH1cclxuICBcclxuICA6aG9zdCB7XHJcbiAgICBpb24tY29udGVudCB7XHJcbiAgICAgIC0tYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KFxyXG4gICAgICAgIDEzNWRlZyxcclxuICAgICAgICB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSksXHJcbiAgICAgICAgI2ZmZmZmZlxyXG4gICAgICApO1xyXG4gICAgfVxyXG4gIFxyXG4gICAgaW9uLWl0ZW0ge1xyXG4gICAgICBib3JkZXItcmFkaXVzOiAwO1xyXG4gICAgICBib3JkZXItYm90dG9tOiAxcHggZG90dGVkIHZhcigtLWlvbi1jb2xvci1tZWRpdW0pO1xyXG4gICAgfVxyXG4gIFxyXG4gICAgaW9uLWNhcmQge1xyXG4gICAgICAmLm5vLXJhZGl1cyB7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMDtcclxuICAgICAgfVxyXG4gICAgfVxyXG4gIH1cclxuICBcclxuICAuYm90YW8tY29yIHtcclxuICAgIGNvbG9yOiBibGFjaztcclxuICB9XHJcblxyXG4gIGlvbi1jb2wge1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgIzEyMGE4ZjtcclxuICB9IiwiLndlbGNvbWUtY2FyZCBpb24taW1nIHtcbiAgbWF4LWhlaWdodDogMzV2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cblxuOmhvc3QgaW9uLWNvbnRlbnQge1xuICAtLWJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudChcbiAgICAxMzVkZWcsXG4gICAgdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpLFxuICAgICNmZmZmZmZcbiAgKTtcbn1cbjpob3N0IGlvbi1pdGVtIHtcbiAgYm9yZGVyLXJhZGl1czogMDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IGRvdHRlZCB2YXIoLS1pb24tY29sb3ItbWVkaXVtKTtcbn1cbjpob3N0IGlvbi1jYXJkLm5vLXJhZGl1cyB7XG4gIGJvcmRlci1yYWRpdXM6IDA7XG59XG5cbi5ib3Rhby1jb3Ige1xuICBjb2xvcjogYmxhY2s7XG59XG5cbmlvbi1jb2wge1xuICBib3JkZXI6IDFweCBzb2xpZCAjMTIwYThmO1xufSJdfQ== */";
+    __webpack_exports__["default"] = ".welcome-card ion-img {\n  max-height: 35vh;\n  overflow: hidden;\n}\n\n:host ion-content {\n  --background: var(--ion-color-success-shade);\n}\n\n:host ion-item {\n  border-radius: 0;\n  border-bottom: 1px dotted var(--ion-color-medium);\n}\n\n:host ion-card.no-radius {\n  border-radius: 0;\n}\n\n.botao-cor {\n  color: black;\n}\n\nion-col {\n  border: 1px solid #120a8f;\n}\n\n.tamanho-item-ispecao {\n  min-width: 244px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvaW5zcGVjYW8vaW5zcGVjYW8tcmVhbGl6YXIvQzpcXFVzZXJzXFxyb2JlclxcT25lRHJpdmVcXGlvbmljXFxzaWdvYnJhLXVpL3NyY1xcYXBwXFxwYWdlc1xcaW5zcGVjYW9cXGluc3BlY2FvLXJlYWxpemFyXFxpbnNwZWNhby1yZWFsaXphci5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2luc3BlY2FvL2luc3BlY2FvLXJlYWxpemFyL2luc3BlY2FvLXJlYWxpemFyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGdCQUFBO0VBQ0EsZ0JBQUE7QUNDSjs7QURHSTtFQUNFLDRDQUFBO0FDQU47O0FER0k7RUFDRSxnQkFBQTtFQUNBLGlEQUFBO0FDRE47O0FES007RUFDRSxnQkFBQTtBQ0hSOztBRFFFO0VBQ0UsWUFBQTtBQ0xKOztBRFFFO0VBQ0UseUJBQUE7QUNMSjs7QURRQTtFQUNFLGdCQUFBO0FDTEYiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9pbnNwZWNhby9pbnNwZWNhby1yZWFsaXphci9pbnNwZWNhby1yZWFsaXphci5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIud2VsY29tZS1jYXJkIGlvbi1pbWcge1xyXG4gICAgbWF4LWhlaWdodDogMzV2aDtcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgfVxyXG4gIFxyXG4gIDpob3N0IHtcclxuICAgIGlvbi1jb250ZW50IHtcclxuICAgICAgLS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3Itc3VjY2Vzcy1zaGFkZSk7XHJcbiAgICB9XHJcbiAgICBcclxuICAgIGlvbi1pdGVtIHtcclxuICAgICAgYm9yZGVyLXJhZGl1czogMDtcclxuICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IGRvdHRlZCB2YXIoLS1pb24tY29sb3ItbWVkaXVtKTtcclxuICAgIH1cclxuICBcclxuICAgIGlvbi1jYXJkIHtcclxuICAgICAgJi5uby1yYWRpdXMge1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDA7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbiAgXHJcbiAgLmJvdGFvLWNvciB7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgfVxyXG5cclxuICBpb24tY29sIHtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICMxMjBhOGY7XHJcbiAgfVxyXG5cclxuLnRhbWFuaG8taXRlbS1pc3BlY2FvIHtcclxuICBtaW4td2lkdGg6IDI0NHB4O1xyXG59XHJcblxyXG4gIFxyXG5cclxuIiwiLndlbGNvbWUtY2FyZCBpb24taW1nIHtcbiAgbWF4LWhlaWdodDogMzV2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cblxuOmhvc3QgaW9uLWNvbnRlbnQge1xuICAtLWJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci1zdWNjZXNzLXNoYWRlKTtcbn1cbjpob3N0IGlvbi1pdGVtIHtcbiAgYm9yZGVyLXJhZGl1czogMDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IGRvdHRlZCB2YXIoLS1pb24tY29sb3ItbWVkaXVtKTtcbn1cbjpob3N0IGlvbi1jYXJkLm5vLXJhZGl1cyB7XG4gIGJvcmRlci1yYWRpdXM6IDA7XG59XG5cbi5ib3Rhby1jb3Ige1xuICBjb2xvcjogYmxhY2s7XG59XG5cbmlvbi1jb2wge1xuICBib3JkZXI6IDFweCBzb2xpZCAjMTIwYThmO1xufVxuXG4udGFtYW5oby1pdGVtLWlzcGVjYW8ge1xuICBtaW4td2lkdGg6IDI0NHB4O1xufSJdfQ== */";
     /***/
   },
 
@@ -316,13 +357,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var src_app_model_enums_status_item_enum__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
-    /*! src/app/model/enums/status-item.enum */
-    "./src/app/model/enums/status-item.enum.ts");
+    var _model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    /*! ../../../model/enums/tipo-status.enum */
+    "./src/app/model/enums/tipo-status.enum.ts");
     /* harmony import */
 
 
-    var _service_sigobra_item_inspesionado_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    var _model_objetc_status_item_inspecionado__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    /*! ../../../model/objetc/status-item-inspecionado */
+    "./src/app/model/objetc/status-item-inspecionado.ts");
+    /* harmony import */
+
+
+    var _service_sigobra_item_inspesionado_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
     /*! ../../../service/sigobra/item-inspesionado.service */
     "./src/app/service/sigobra/item-inspesionado.service.ts");
 
@@ -341,6 +388,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.router = router;
         this.inspecao = new _model_objetc_inspecao__WEBPACK_IMPORTED_MODULE_6__["Inspecao"]();
         this.usuario = new _model_objetc_usuario__WEBPACK_IMPORTED_MODULE_11__["Usuario"]();
+        this.statusBotao = _model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"];
       }
 
       _createClass(InspecaoRealizarPage, [{
@@ -365,6 +413,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 this.inspecaoitens = this.inspecao.inspecaoItemTipoInspecao;
                 return;
             } */
+          this.base.present();
           this.is.byinspecaoitens(this.inspecao).subscribe(function (data) {
             _this.base.dismiss();
 
@@ -424,93 +473,57 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "inicial",
         value: function inicial(inspecaoitem) {
-          /*
-          if (inspecaoitem === undefined || inspecaoitem === null) {
-            return true;
-          } else {
-            try {
-              return (inspecaoitem.statusInspecao === undefined ||
-                inspecaoitem.statusInspecao === null ||
-                inspecaoitem.statusInspecao.length === 0 || (
-                   ((inspecaoitem.statusInspecao[inspecaoitem.statusInspecao.length].statusiteminspecao !== null &&
-                     inspecaoitem.statusInspecao[inspecaoitem.statusInspecao.length].statusiteminspecao !== undefined) &&
-                (inspecaoitem.statusInspecao[inspecaoitem.statusInspecao.length].statusiteminspecao.tipoStatus === TipoStatus.aberto ||
-                  inspecaoitem.statusInspecao[inspecaoitem.statusInspecao.length].statusiteminspecao.tipoStatus.toString() === 'aberto'))
-                )) ;
-            } catch (error) {
-              return true;
-            }
-          } */
-          return inspecaoitem.statusItem === null || src_app_model_enums_status_item_enum__WEBPACK_IMPORTED_MODULE_12__["StatusItem"][inspecaoitem.statusItem.toString()] === src_app_model_enums_status_item_enum__WEBPACK_IMPORTED_MODULE_12__["StatusItem"].aberto;
+          return inspecaoitem.statusInspecao === null || inspecaoitem.statusInspecao === undefined || inspecaoitem.statusInspecao.statusiteminspecao === null || inspecaoitem.statusInspecao.statusiteminspecao === undefined || inspecaoitem.statusInspecao.statusiteminspecao.tipoStatus === null || inspecaoitem.statusInspecao.statusiteminspecao.tipoStatus === undefined || _model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"][inspecaoitem.statusInspecao.statusiteminspecao.tipoStatus.toString()] === _model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"].aberto;
         }
       }, {
         key: "aberto",
         value: function aberto(inspecaoitem) {
-          /*
-          if (inspecaoitem === undefined || inspecaoitem === null) {
-           return true;
-          } else {
-           try {
-             return ((inspecaoitem.statusInspecao !== undefined &&
-               inspecaoitem.statusInspecao !== null) && (
-               inspecaoitem.statusInspecao.length === 0 ||
-               (inspecaoitem.statusInspecao[inspecaoitem.statusInspecao.length].statusiteminspecao.tipoStatus in
-               [TipoStatus.aberto, TipoStatus.reprovado] ||
-               inspecaoitem.statusInspecao[inspecaoitem.statusInspecao.length].statusiteminspecao.tipoStatus.toString() in
-               ['aberto', 'reprovado'] )
-               ));
-           } catch (error) {
-             return true;
-           }
-           
-          } */
-          console.log(inspecaoitem);
-          console.log(src_app_model_enums_status_item_enum__WEBPACK_IMPORTED_MODULE_12__["StatusItem"][inspecaoitem.statusItem.toString()]);
-          return inspecaoitem.statusItem === null || src_app_model_enums_status_item_enum__WEBPACK_IMPORTED_MODULE_12__["StatusItem"][inspecaoitem.statusItem.toString()] === src_app_model_enums_status_item_enum__WEBPACK_IMPORTED_MODULE_12__["StatusItem"].aberto || src_app_model_enums_status_item_enum__WEBPACK_IMPORTED_MODULE_12__["StatusItem"][inspecaoitem.statusItem.toString()] === src_app_model_enums_status_item_enum__WEBPACK_IMPORTED_MODULE_12__["StatusItem"].inspecionadoReprovado;
+          return inspecaoitem.statusInspecao === null || inspecaoitem.statusInspecao === undefined || inspecaoitem.statusInspecao.statusiteminspecao === null || inspecaoitem.statusInspecao.statusiteminspecao === undefined || inspecaoitem.statusInspecao.statusiteminspecao.tipoStatus === null || inspecaoitem.statusInspecao.statusiteminspecao.tipoStatus === undefined || _model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"][inspecaoitem.statusInspecao.statusiteminspecao.tipoStatus.toString()] === _model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"].aberto || _model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"][inspecaoitem.statusInspecao.statusiteminspecao.tipoStatus.toString()] === _model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"].inspecionadaReprovado;
+        }
+      }, {
+        key: "inspecionado",
+        value: function inspecionado(inspecaoitem) {
+          try {
+            return _model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"][inspecaoitem.statusInspecao.statusiteminspecao.tipoStatus.toString()] === _model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"].inspecionadaAprovado || _model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"][inspecaoitem.statusInspecao.statusiteminspecao.tipoStatus.toString()] === _model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"].reinspecionadaAprovado;
+          } catch (error) {
+            return false;
+          }
         }
       }, {
         key: "reprovadoAprovado",
         value: function reprovadoAprovado(inspecaoitem) {
-          /**
-          if (inspecaoitem === undefined || inspecaoitem === null) {
-           return false;
-          } else {
-           try {
-             return (inspecaoitem.statusInspecao !== undefined &&
-               inspecaoitem.statusInspecao !== null &&
-               inspecaoitem.statusInspecao.length !== 0 &&
-               inspecaoitem.statusInspecao[inspecaoitem.statusInspecao.length].statusiteminspecao.tipoStatus in
-               [TipoStatus.reprovado, 'reprovado']);
-           } catch (error) {
-             return true;
-           }
-           
-          } */
-          console.log(inspecaoitem);
-          return src_app_model_enums_status_item_enum__WEBPACK_IMPORTED_MODULE_12__["StatusItem"][inspecaoitem.statusItem.toString()] === src_app_model_enums_status_item_enum__WEBPACK_IMPORTED_MODULE_12__["StatusItem"].inspecionadoReprovado;
+          try {
+            return _model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"][inspecaoitem.statusInspecao.statusiteminspecao.tipoStatus.toString()] === _model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"].inspecionadaReprovado;
+          } catch (error) {
+            return false;
+          }
         }
       }, {
         key: "inspencionar",
         value: function inspencionar(itemInspencao) {
           var _this4 = this;
 
-          /* if ((itemInspencao.ultimoStatus.statusiteminspecao.tipoStatus in [TipoStatus.aberto, TipoStatus.finalizado, 'aberto', 'finalizado'])) {
+          /* if ((itemInspencao.statusInspecao.statusiteminspecao.tipoStatus in [TipoStatus.aberto, TipoStatus.finalizado, 'aberto', 'finalizado'])) {
              this.base.mensagemErro('Selecione um status de inspenção que tenha com tipo aberto ou finalizado');
              return;
            } */
-          itemInspencao.novoStatus.pessoa = this.statusServe.as.token.usuario.pessoa;
-          itemInspencao.novoStatus.id = null;
-          itemInspencao.statusItem = src_app_model_enums_status_item_enum__WEBPACK_IMPORTED_MODULE_12__["StatusItem"].inspecionado;
-          this.iis.salvar(itemInspencao, this.inspecao.id).subscribe(function (data) {
-            itemInspencao = data;
+          if (itemInspencao.statusInspecao === null || itemInspencao.statusInspecao === undefined) {
+            itemInspencao.statusInspecao = new _model_objetc_status_item_inspecionado__WEBPACK_IMPORTED_MODULE_13__["StatusItemInspecionado"]();
+          }
 
-            if (itemInspencao.statusInspecao === undefined || itemInspencao.statusInspecao === null) {
-              itemInspencao.statusInspecao = new Array();
-            }
+          itemInspencao.statusInspecao.pessoa = this.statusServe.as.token.usuario.pessoa;
+          itemInspencao.statusInspecao.statusiteminspecao = this.buscarStatusPorTipo(_model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"].inspecionadaAprovado);
+          this.base.present();
+          this.statusServe.salvar(itemInspencao.statusInspecao, itemInspencao.id).subscribe(function (data) {
+            itemInspencao.statusInspecao = data;
 
-            itemInspencao.statusInspecao.push(itemInspencao.novoStatus);
+            _this4.base.dismiss();
+
+            _this4.base.menssagemSucesso('Inspenção registrada com sucesso');
           }, function (error) {
-            _this4.base.mensagemErro('Erro ao salvar isnpenção :' + _this4.base.tratarErro(error));
+            _this4.base.dismiss();
+
+            _this4.base.mensagemErro('Erro ao salvar inspenção :' + _this4.base.tratarErro(error));
           });
         }
       }, {
@@ -518,23 +531,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function inspencionarReprovar(itemInspencao) {
           var _this5 = this;
 
-          /*if (!(itemInspencao.ultimoStatus.statusiteminspecao.tipoStatus === TipoStatus.reprovado ||
-            itemInspencao.ultimoStatus.statusiteminspecao.tipoStatus.toString() === 'reprovado')) {
+          /*if (!(itemInspencao.statusInspecao.statusiteminspecao.tipoStatus === TipoStatus.reprovado ||
+            itemInspencao.statusInspecao.statusiteminspecao.tipoStatus.toString() === 'reprovado')) {
             this.base.mensagemErro('Selecione um status de inspenção que tenha como tipo reprovado');
             return;
           } */
-          itemInspencao.novoStatus.pessoa = this.statusServe.as.token.usuario.pessoa;
-          itemInspencao.novoStatus.id = null;
-          itemInspencao.statusItem = src_app_model_enums_status_item_enum__WEBPACK_IMPORTED_MODULE_12__["StatusItem"].inspecionadoReprovado;
-          this.iis.salvar(itemInspencao, this.inspecao.id).subscribe(function (data) {
-            itemInspencao = data;
+          if (itemInspencao.statusInspecao === null || itemInspencao.statusInspecao === undefined) {
+            itemInspencao.statusInspecao = new _model_objetc_status_item_inspecionado__WEBPACK_IMPORTED_MODULE_13__["StatusItemInspecionado"]();
+          }
 
-            if (itemInspencao.statusInspecao === undefined || itemInspencao.statusInspecao === null) {
-              itemInspencao.statusInspecao = new Array();
-            } //itemInspencao.statusInspecao.push(itemInspencao.novoStatus);
+          itemInspencao.statusInspecao.pessoa = this.statusServe.as.token.usuario.pessoa;
+          itemInspencao.statusInspecao.statusiteminspecao = this.buscarStatusPorTipo(_model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"].inspecionadaReprovado);
+          this.base.present();
+          this.statusServe.salvar(itemInspencao.statusInspecao, itemInspencao.id).subscribe(function (data) {
+            itemInspencao.statusInspecao = data;
+
+            _this5.base.dismiss();
+
+            _this5.base.menssagemSucesso('Inspenção registrada com sucesso'); //itemInspencao.statusInspecao.push(itemInspencao.novoStatus);
 
           }, function (error) {
-            _this5.base.mensagemErro('Erro ao salvar isnpenção :' + _this5.base.tratarErro(error));
+            _this5.base.dismiss();
+
+            _this5.base.mensagemErro('Erro ao salvar inspenção :' + _this5.base.tratarErro(error));
           });
         }
       }, {
@@ -542,36 +561,121 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function ReinspencionarAprovar(itemInspencao) {
           var _this6 = this;
 
-          /* if ((itemInspencao.ultimoStatus.statusiteminspecao.tipoStatus in [TipoStatus.finalizado, 'finalizado'])) {
+          /* if ((itemInspencao.statusInspecao.statusiteminspecao.tipoStatus in [TipoStatus.finalizado, 'finalizado'])) {
              this.base.mensagemErro('Selecione um status de inspenção que tenha com tipo finalizado');
              return;
            } */
-          itemInspencao.novoStatus.id = null;
-          itemInspencao.novoStatus.pessoa = this.statusServe.as.token.usuario.pessoa;
-          itemInspencao.statusItem = src_app_model_enums_status_item_enum__WEBPACK_IMPORTED_MODULE_12__["StatusItem"].reinspencionadoAprovado;
-          var guarda = itemInspencao.novoStatus;
-          this.iis.salvar(itemInspencao, this.inspecao.id).subscribe(function (data) {
-            itemInspencao = data;
+          if (itemInspencao.statusInspecao === null || itemInspencao.statusInspecao === undefined) {
+            itemInspencao.statusInspecao = new _model_objetc_status_item_inspecionado__WEBPACK_IMPORTED_MODULE_13__["StatusItemInspecionado"]();
+          }
 
-            if (itemInspencao.statusInspecao === undefined || itemInspencao.statusInspecao === null) {
-              itemInspencao.statusInspecao = new Array();
-            } // itemInspencao.statusInspecao.push(itemInspencao.novoStatus);
+          itemInspencao.statusInspecao.pessoa = this.statusServe.as.token.usuario.pessoa;
+          itemInspencao.statusInspecao.statusiteminspecao = this.buscarStatusPorTipo(_model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"].reinspecionadaAprovado);
+          this.base.present();
+          this.statusServe.salvar(itemInspencao.statusInspecao, itemInspencao.id).subscribe(function (data) {
+            itemInspencao.statusInspecao = data;
+
+            _this6.base.dismiss();
+
+            _this6.base.menssagemSucesso('Inspenção registrada com sucesso'); // itemInspencao.statusInspecao.push(itemInspencao.novoStatus);
 
           }, function (error) {
-            _this6.base.mensagemErro('Erro ao salvar isnpenção :' + _this6.base.tratarErro(error));
+            _this6.base.dismiss();
+
+            _this6.base.mensagemErro('Erro ao salvar inspenção :' + _this6.base.tratarErro(error));
+          });
+        }
+      }, {
+        key: "reabrir",
+        value: function reabrir(itemInspencao) {
+          var _this7 = this;
+
+          /* if ((itemInspencao.statusInspecao.statusiteminspecao.tipoStatus in [TipoStatus.finalizado, 'finalizado'])) {
+             this.base.mensagemErro('Selecione um status de inspenção que tenha com tipo finalizado');
+             return;
+           } */
+          if (itemInspencao.statusInspecao === null || itemInspencao.statusInspecao === undefined) {
+            itemInspencao.statusInspecao = new _model_objetc_status_item_inspecionado__WEBPACK_IMPORTED_MODULE_13__["StatusItemInspecionado"]();
+          }
+
+          itemInspencao.statusInspecao.pessoa = this.statusServe.as.token.usuario.pessoa;
+          itemInspencao.statusInspecao.statusiteminspecao = this.buscarStatusPorTipo(_model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"].aberto);
+          this.base.present();
+          this.statusServe.reabrir(itemInspencao.statusInspecao, itemInspencao.id).subscribe(function (data) {
+            itemInspencao.statusInspecao = data;
+
+            _this7.base.dismiss();
+
+            _this7.base.menssagemSucesso('Inspenção reaberta com sucesso'); // itemInspencao.statusInspecao.push(itemInspencao.novoStatus);
+
+          }, function (error) {
+            _this7.base.dismiss();
+
+            _this7.base.mensagemErro('Erro ao reabrir inspenção :' + _this7.base.tratarErro(error));
           });
         }
       }, {
         key: "getColor",
         value: function getColor(inspecaoitem) {
           try {
-            if (inspecaoitem.ultimoStatus !== null && inspecaoitem.ultimoStatus !== undefined && inspecaoitem.ultimoStatus.statusiteminspecao !== null && inspecaoitem.ultimoStatus.statusiteminspecao !== undefined && inspecaoitem.ultimoStatus.statusiteminspecao.cor !== undefined && inspecaoitem.ultimoStatus.statusiteminspecao.cor !== null) {
-              return inspecaoitem.ultimoStatus.statusiteminspecao.cor;
+            if (inspecaoitem.statusInspecao !== null && inspecaoitem.statusInspecao !== undefined && inspecaoitem.statusInspecao.statusiteminspecao !== null && inspecaoitem.statusInspecao.statusiteminspecao !== undefined && inspecaoitem.statusInspecao.statusiteminspecao.cor !== undefined && inspecaoitem.statusInspecao.statusiteminspecao.cor !== null) {
+              return this.getColorStatus(inspecaoitem.statusInspecao.statusiteminspecao);
             } else {
-              return 'transparent';
+              return this.getColorByStatus(_model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"].aberto);
             }
           } catch (error) {
             return 'transparent';
+          }
+        }
+      }, {
+        key: "getColorStatus",
+        value: function getColorStatus(status) {
+          return status.cor;
+        }
+      }, {
+        key: "getColorByStatus",
+        value: function getColorByStatus(tipostatus) {
+          var cor = '';
+          this.statusItem.forEach(function (element) {
+            if (_model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"][element.tipoStatus.toString()] === tipostatus) {
+              cor = element.cor;
+            }
+          });
+
+          if (cor !== '') {
+            return cor;
+          } else {
+            return 'transparent';
+          }
+        }
+      }, {
+        key: "buscarStatusPorTipo",
+        value: function buscarStatusPorTipo(tipostatus) {
+          var statu = this.statusItem[0];
+          this.statusItem.forEach(function (element) {
+            if (_model_enums_tipo_status_enum__WEBPACK_IMPORTED_MODULE_12__["TipoStatus"][element.tipoStatus.toString()] === tipostatus) {
+              return statu = element;
+            }
+          });
+          return statu;
+        }
+      }, {
+        key: "msgExpandida",
+        value: function msgExpandida(inspecaoitem) {
+          this.base.mensagemAviso(inspecaoitem.statusInspecao.descricaoProblema, 'Descrição');
+        }
+      }, {
+        key: "msgExpmv",
+        value: function msgExpmv(inspecaoitem) {
+          this.base.mensagemAviso(inspecaoitem.itemtipoinspecao.metodoverificacao, 'Método de Verificação');
+        }
+      }, {
+        key: "temMsg",
+        value: function temMsg(inspecaoitem) {
+          try {
+            return inspecaoitem.statusInspecao.descricaoProblema !== undefined && inspecaoitem.statusInspecao.descricaoProblema !== null && inspecaoitem.statusInspecao.descricaoProblema !== '';
+          } catch (error) {
+            return false;
           }
         }
       }, {
@@ -582,7 +686,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function selecionartipoinspecao(event) {}
       }, {
         key: "selecionarStatus",
-        value: function selecionarStatus(event) {// itemInspencao.ultimoStatus.statusiteminspecao = null;
+        value: function selecionarStatus(event) {// itemInspencao.statusInspecao.statusiteminspecao = null;
         }
       }, {
         key: "editando",
@@ -610,7 +714,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         type: _service_sigobra_status_item_inspecionado_service__WEBPACK_IMPORTED_MODULE_1__["StatusItemInspecionadoService"]
       }, {
-        type: _service_sigobra_item_inspesionado_service__WEBPACK_IMPORTED_MODULE_13__["ItemInspesionadoService"]
+        type: _service_sigobra_item_inspesionado_service__WEBPACK_IMPORTED_MODULE_14__["ItemInspesionadoService"]
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
       }];
@@ -624,84 +728,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./inspecao-realizar.page.scss */
       "./src/app/pages/inspecao/inspecao-realizar/inspecao-realizar.page.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_model_base__WEBPACK_IMPORTED_MODULE_5__["Base"], _service_sigobra_usuario_service__WEBPACK_IMPORTED_MODULE_10__["UsuarioService"], _service_sigobra_inspecao_service__WEBPACK_IMPORTED_MODULE_7__["InspecaoService"], _service_sigobra_tipoinspecao_service__WEBPACK_IMPORTED_MODULE_9__["TipoinspecaoService"], _service_sigobra_obra_service__WEBPACK_IMPORTED_MODULE_8__["ObraService"], _service_sigobra_statusitensinspecao_service__WEBPACK_IMPORTED_MODULE_2__["StatusitensinspecaoService"], _service_sigobra_status_item_inspecionado_service__WEBPACK_IMPORTED_MODULE_1__["StatusItemInspecionadoService"], _service_sigobra_item_inspesionado_service__WEBPACK_IMPORTED_MODULE_13__["ItemInspesionadoService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])], InspecaoRealizarPage);
-    /***/
-  },
-
-  /***/
-  "./src/app/service/sigobra/item-inspesionado.service.ts":
-  /*!**************************************************************!*\
-    !*** ./src/app/service/sigobra/item-inspesionado.service.ts ***!
-    \**************************************************************/
-
-  /*! exports provided: ItemInspesionadoService */
-
-  /***/
-  function srcAppServiceSigobraItemInspesionadoServiceTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "ItemInspesionadoService", function () {
-      return ItemInspesionadoService;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./../autentificacao/autentificacao.service */
-    "./src/app/service/autentificacao/autentificacao.service.ts");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
-
-    var ItemInspesionadoService = /*#__PURE__*/function () {
-      function ItemInspesionadoService(http, as) {
-        _classCallCheck(this, ItemInspesionadoService);
-
-        this.http = http;
-        this.as = as;
-        this.url = '/iteminspecionado';
-      }
-
-      _createClass(ItemInspesionadoService, [{
-        key: "salvar",
-        value: function salvar(item, idInspecao) {
-          return this.http.post(this.as.url + this.url + '/' + idInspecao.toString(), item, this.as.getOptions());
-        }
-      }]);
-
-      return ItemInspesionadoService;
-    }();
-
-    ItemInspesionadoService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
-      }, {
-        type: _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_1__["AutentificacaoService"]
-      }];
-    };
-
-    ItemInspesionadoService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
-      providedIn: 'root'
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"], _autentificacao_autentificacao_service__WEBPACK_IMPORTED_MODULE_1__["AutentificacaoService"]])], ItemInspesionadoService);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_model_base__WEBPACK_IMPORTED_MODULE_5__["Base"], _service_sigobra_usuario_service__WEBPACK_IMPORTED_MODULE_10__["UsuarioService"], _service_sigobra_inspecao_service__WEBPACK_IMPORTED_MODULE_7__["InspecaoService"], _service_sigobra_tipoinspecao_service__WEBPACK_IMPORTED_MODULE_9__["TipoinspecaoService"], _service_sigobra_obra_service__WEBPACK_IMPORTED_MODULE_8__["ObraService"], _service_sigobra_statusitensinspecao_service__WEBPACK_IMPORTED_MODULE_2__["StatusitensinspecaoService"], _service_sigobra_status_item_inspecionado_service__WEBPACK_IMPORTED_MODULE_1__["StatusItemInspecionadoService"], _service_sigobra_item_inspesionado_service__WEBPACK_IMPORTED_MODULE_14__["ItemInspesionadoService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])], InspecaoRealizarPage);
     /***/
   },
 
@@ -762,6 +789,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "salvar",
         value: function salvar(status, idItem) {
           return this.http.post(this.as.url + this.url + '/' + idItem.toString(), status, this.as.getOptions());
+        }
+      }, {
+        key: "reabrir",
+        value: function reabrir(status, idItem) {
+          return this.http.post(this.as.url + this.url + '/reabri/' + idItem.toString(), status, this.as.getOptions());
         }
       }]);
 
